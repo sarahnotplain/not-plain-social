@@ -16,5 +16,15 @@
       "title": "Secrets: a true family story an aunt has retold at least fifteen times",
       "description": "A memoir essay built from a story the author has asked her aunt to retell at least fifteen times: a December night in 1990 and the secrets at the start of her life. From Not Plain, a memoir newsletter by Sarah."
     }
+  },
+  "buffer": {
+    "facebook": {
+      "id": "6abbfb72a784493a8ae4dbb1",
+      "status": "draft"
+    },
+    "instagram": {
+      "id": "6abbfb728db23fcd3a34d820",
+      "status": "draft"
+    }
   }
 }
