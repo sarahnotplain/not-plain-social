@@ -199,21 +199,6 @@
       "logged_at": "2026-09-29T18:02:34+00:00"
     },
     {
-      "slug": "note-346791189",
-      "title": "Notes from Not Plain",
-      "url": "https://sarahnotplain.substack.com",
-      "status": "drafted",
-      "variants": [
-        {
-          "file": "post.json",
-          "layout": "note",
-          "quote": "I refuse to have experienced and witnessed so much destruction and let that be all it was and is.",
-          "buffer": {}
-        }
-      ],
-      "logged_at": "2026-09-29T18:08:27+00:00"
-    },
-    {
       "slug": "note-346709476",
       "status": "skipped",
       "reason": "intro note, platform chatter",
@@ -260,6 +245,34 @@
       "status": "skipped",
       "reason": "needs the essay for context; essay drafts already cover it",
       "logged_at": "2026-09-29T18:08:38+00:00"
+    },
+    {
+      "slug": "note-346791189",
+      "title": "Notes from Not Plain",
+      "url": "https://sarahnotplain.substack.com",
+      "status": "drafted",
+      "variants": [
+        {
+          "file": "post.json",
+          "layout": "note",
+          "quote": "I refuse to have experienced and witnessed so much destruction and let that be all it was and is.",
+          "buffer": {
+            "facebook": {
+              "id": "6abbfeacc6624e817851adef",
+              "status": "draft"
+            },
+            "instagram": {
+              "id": "6abbfeadc6624e817851ae0b",
+              "status": "draft"
+            },
+            "pinterest": {
+              "id": "6abbfeada784493a8ae574f9",
+              "status": "draft"
+            }
+          }
+        }
+      ],
+      "logged_at": "2026-09-29T18:08:45+00:00"
     }
   ]
 }
