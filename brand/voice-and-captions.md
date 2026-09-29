@@ -37,6 +37,15 @@ Captions are a quiet invitation to read the post. Sarah's writing does the work;
 - **Title** (100 characters max): the post title plus a searchable phrase, such as "…: an essay on grief and old photographs".
 - **Description** (500 characters max): 1–3 sentences in third person that say what the post is about using searchable words (memoir, grief, family secrets, narrative nonfiction, true story). End with "From Not Plain, a memoir newsletter by Sarah."
 
+## Follow-up posts (packages 2 and 3)
+
+Each article gets up to three posts so the feed stays active between essays. The first announces it. The others share a different line and point back to it.
+
+- Don't say "New" or "new essay" in follow-ups.
+- Lead with the quote, then something like "From There, But Not Here, on Not Plain." One sentence on what the essay is about is fine if it's true to the post.
+- Keep the same call to action: "Read it at the link in bio." on Instagram, the URL on Facebook.
+- Pinterest: use a different title angle for each package so the pins don't compete in search.
+
 ## Hashtag pool (pick 3–5 that fit)
 
 #memoir #narrativenonfiction #grief #griefjourney #familysecrets #memoirwriting #writersofinstagram #substack #nonfiction #truestory #seattlewriters

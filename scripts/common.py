@@ -40,5 +40,15 @@ def post_dir(slug):
     return POSTS / slug
 
 
+def variant_suffix(post_path):
+    """post.json -> "", post-2.json -> "-2". Each variant's images carry the same suffix."""
+    m = re.fullmatch(r"post(-\d+)?\.json", pathlib.Path(post_path).name)
+    return (m.group(1) or "") if m else ""
+
+
+def image_name(post_path, platform):
+    return f"{platform}{variant_suffix(post_path)}.png"
+
+
 def log():
     return load_json(LOG, {"posts": []})

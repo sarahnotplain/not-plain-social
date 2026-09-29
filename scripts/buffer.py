@@ -3,7 +3,7 @@
 Usage:
     python scripts/buffer.py setup                        # list channel IDs (+ Pinterest boards) for config.json
     python scripts/buffer.py introspect CreatePostInput   # show a GraphQL type's fields (for fixing field names)
-    python scripts/buffer.py draft posts/<slug>/post.json [--dry-run]
+    python scripts/buffer.py draft posts/<slug>/post.json [--dry-run] [--only facebook,instagram]
 
 `draft` creates one DRAFT per platform (Facebook, Instagram, Pinterest). Nothing is
 published: Sarah approves drafts in Buffer. Images must already be pushed to GitHub
@@ -13,7 +13,7 @@ Needs BUFFER_API_KEY in the environment or in a .env file at the repo root
 (Buffer -> Settings -> API: https://publish.buffer.com/settings/api).
 """
 import json, os, pathlib, sys, time, urllib.request
-from common import ROOT, config, load_json, save_json
+from common import ROOT, config, image_name, load_json, save_json
 
 ENDPOINT = "https://api.buffer.com"
 
@@ -101,11 +101,11 @@ CREATE = """mutation($input: CreatePostInput!) {
 }"""
 
 
-def build_inputs(post, cfg):
+def build_inputs(post, cfg, path):
     ch = cfg["buffer"]["channels"]
     caps = post["captions"]
-    square = raw_url(cfg, post["slug"], "instagram.png")
-    tall = raw_url(cfg, post["slug"], "pinterest.png")
+    square = raw_url(cfg, post["slug"], image_name(path, "instagram"))
+    tall = raw_url(cfg, post["slug"], image_name(path, "pinterest"))
     def img(url):
         a = {"url": url}
         if post.get("alt_text"):
@@ -126,14 +126,16 @@ def build_inputs(post, cfg):
     }
 
 
-def draft(path, dry_run=False):
+def draft(path, dry_run=False, only=None):
     path = pathlib.Path(path)
     post, cfg = load_json(path), config()
-    inputs = build_inputs(post, cfg)
+    inputs = build_inputs(post, cfg, path)
+    if only:
+        inputs = {k: v for k, v in inputs.items() if k in only}
     if dry_run:
         print(json.dumps(inputs, indent=2, ensure_ascii=False)); return
 
-    for url in {raw_url(cfg, post["slug"], f) for f in ("instagram.png", "pinterest.png")}:
+    for url in {raw_url(cfg, post["slug"], image_name(path, p)) for p in ("instagram", "pinterest")}:
         wait_until_public(url)
 
     results = post.get("buffer", {})
@@ -159,5 +161,7 @@ if __name__ == "__main__":
     a = sys.argv[1:]
     if a[:1] == ["setup"]: setup()
     elif a[:1] == ["introspect"] and len(a) == 2: introspect(a[1])
-    elif a[:1] == ["draft"] and len(a) >= 2: draft(a[1], "--dry-run" in a)
+    elif a[:1] == ["draft"] and len(a) >= 2:
+        only = a[a.index("--only") + 1].split(",") if "--only" in a else None
+        draft(a[1], "--dry-run" in a, only)
     else: sys.exit(__doc__)

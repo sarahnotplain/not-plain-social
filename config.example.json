@@ -2,6 +2,7 @@
   "substack_url": "https://sarahnotplain.substack.com",
   "site_label": "sarahnotplain.substack.com",
   "start_date": "2026-09-26",
+  "drafts_per_article": 3,
 
   "github": {
     "owner": "YOUR-GITHUB-USERNAME",

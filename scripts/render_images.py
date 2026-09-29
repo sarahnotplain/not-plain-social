@@ -1,14 +1,15 @@
 """Render the social images for one post.
 
 Usage:
-    python scripts/render_images.py posts/<slug>/post.json
+    python scripts/render_images.py posts/<slug>/post.json      (or post-2.json, post-3.json)
 
 Reads the post package, fills the chosen layout in templates/, and writes
 instagram.png (4:5, also used for Facebook) and pinterest.png (2:3) next to post.json.
+Variants (post-2.json) get matching names (instagram-2.png).
 """
 import base64, html, mimetypes, pathlib, sys, urllib.request
 from playwright.sync_api import sync_playwright
-from common import ROOT, SIZES, LAYOUTS, config, load_json
+from common import ROOT, SIZES, LAYOUTS, config, image_name, load_json
 
 TEMPLATES = ROOT / "templates"
 FONTS = ROOT / "assets" / "fonts"
@@ -69,7 +70,9 @@ def fill(template, post, cfg, folder):
     }
     out = template
     for k, v in values.items():
-        out = out.replace("{{" + k + "}}", html.escape(v))
+        # Keep dashes on the line with the word before them, never starting a new line.
+        v = html.escape(v).replace(" —", "&nbsp;—").replace(" –", "&nbsp;–")
+        out = out.replace("{{" + k + "}}", v)
     if "{{image_src}}" in out:
         out = out.replace("{{image_src}}", header_image(post, folder))
     return out
@@ -94,7 +97,7 @@ def main(post_path):
             page.set_content(f"<!doctype html><html><head><meta charset='utf-8'><style>{css}</style></head>{body}</html>")
             page.evaluate("document.fonts.ready")
             page.evaluate(FIT_JS)
-            out = folder / f"{name}.png"
+            out = folder / image_name(post_path, name)
             page.screenshot(path=str(out))
             page.close()
             print(f"wrote {out.relative_to(ROOT)}")

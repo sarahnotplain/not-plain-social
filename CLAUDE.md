@@ -8,7 +8,7 @@ This repo turns new posts from Sarah's Substack, **Not Plain** (sarahnotplain.su
 
 Run the `share-new-posts` skill (`/share-new-posts`). It walks through every step. In short:
 
-check feed → write post.json (layout, quote, captions) → validate → render images → look at them → git push → Buffer drafts → log → report
+check feed → write post.json, post-2.json, post-3.json (3 packages per article: layout, quote, captions) → validate → render images → look at them → git push → Buffer drafts → log → report
 
 ## Hard rules
 
@@ -33,7 +33,7 @@ check feed → write post.json (layout, quote, captions) → validate → render
 | `examples/` | Approved example packages (post.json + images). Match these. |
 | `templates/*.html`, `templates/base.css` | The layouts. Edit these when Sarah asks for design changes. |
 | `scripts/` | check_feed, validate_post, render_images, buffer, log_post |
-| `posts/<slug>/` | One folder per shared post: `source.json` (local only), `post.json`, `instagram.png`, `pinterest.png` |
+| `posts/<slug>/` | One folder per shared post: `source.json` (local only), then per package `post.json` / `post-2.json` / `post-3.json` with matching `instagram(-N).png`, `pinterest(-N).png` |
 | `data/posted.json` | Log of what's been drafted/skipped. Never re-draft a logged post unless asked. |
 | `config.json` | Substack URL, GitHub repo, Buffer channel + board IDs |
 | `.env` | `BUFFER_API_KEY` (never commit, never print) |

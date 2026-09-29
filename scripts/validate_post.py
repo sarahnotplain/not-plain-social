@@ -7,7 +7,7 @@ Fails (exit 1) if: the quote isn't word-for-word in the post, captions break
 platform limits or house rules, or (with --images) the images are missing.
 """
 import pathlib, re, sys, unicodedata
-from common import LAYOUTS, load_json
+from common import LAYOUTS, image_name, load_json
 
 LIMITS = {"instagram": 2200, "facebook": 5000, "pin_title": 100, "pin_desc": 500}
 MAX_HASHTAGS = 5
@@ -65,7 +65,7 @@ def main(path, check_images=False):
         errors.append("no emoji (house rule, see CLAUDE.md)")
 
     if check_images:
-        for f in ("instagram.png", "pinterest.png"):
+        for f in (image_name(path, "instagram"), image_name(path, "pinterest")):
             if not (path.parent / f).exists():
                 errors.append(f"missing {f}; run render_images.py")
 
