@@ -90,7 +90,7 @@ The computer needs to be on (or wake up) for the task to run. If it's asleep, th
 
 ## Client mockups (sales tool)
 
-Tell Claude: "Make a mockup for https://substack.com/@handle". It runs `scripts/mockup.py`, which pulls the writer's colors, logo and 3 latest free posts into `private/mockups/<name>/` (never committed), picks lines from their post, and renders quote, print and photo cards in their brand.
+**Only after the writer says yes.** Tell Claude: "They said yes. Make a mockup for https://substack.com/@handle". It runs `scripts/mockup.py`, which pulls the writer's colors, logo and 3 latest free posts into `private/mockups/<name>/` (never committed), picks lines from their post, and renders quote and print cards in their brand (photo cards only if they confirm the cover photo is theirs). Mockups stay private and are deleted if they decline.
 
 ## What's in here
 

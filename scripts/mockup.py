@@ -1,5 +1,9 @@
 """Set up a sales mockup for another Substack writer.
 
+ONLY run this after the writer has said yes to a mockup. Mockups stay private to that
+writer, are never posted or reused without written permission, and get deleted if they
+decline. Don't use their cover photo unless they confirm it's theirs to use.
+
 Usage:
     python scripts/mockup.py https://substack.com/@handle      (or a publication URL, or @handle)
 
