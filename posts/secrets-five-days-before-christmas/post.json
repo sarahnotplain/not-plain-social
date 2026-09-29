@@ -16,5 +16,18 @@
       "title": "Secrets: Five Days Before Christmas, 1990. A true family story",
       "description": "A true family story about secrets, told the way an aunt has retold it again and again. Memoir and narrative nonfiction. From Not Plain, a memoir newsletter by Sarah."
     }
+  },
+  "buffer": {
+    "facebook": {
+      "id": "6abbfa21a784493a8ae4b142",
+      "status": "draft"
+    },
+    "instagram": {
+      "id": "6abbfa21e644a3493f097cfa",
+      "status": "draft"
+    },
+    "pinterest": {
+      "error": "Failed to create post: Board not found"
+    }
   }
 }

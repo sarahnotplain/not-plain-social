@@ -106,16 +106,21 @@ def build_inputs(post, cfg):
     caps = post["captions"]
     square = raw_url(cfg, post["slug"], "instagram.png")
     tall = raw_url(cfg, post["slug"], "pinterest.png")
+    def img(url):
+        a = {"url": url}
+        if post.get("alt_text"):
+            a["metadata"] = {"altText": post["alt_text"]}
+        return [{"image": a}]
     common = {"schedulingType": "automatic", "mode": "addToQueue", "saveToDraft": True, "needsApproval": False}
     return {
         "facebook": {**common, "channelId": ch["facebook"], "text": caps["facebook"],
-                     "assets": [{"image": {"url": square}}],
+                     "assets": img(square),
                      "metadata": {"facebook": {"type": "post"}}},
         "instagram": {**common, "channelId": ch["instagram"], "text": caps["instagram"],
-                      "assets": [{"image": {"url": square}}],
+                      "assets": img(square),
                       "metadata": {"instagram": {"type": "post", "shouldShareToFeed": True}}},
         "pinterest": {**common, "channelId": ch["pinterest"], "text": caps["pinterest"]["description"],
-                      "assets": [{"image": {"url": tall}}],
+                      "assets": img(tall),
                       "metadata": {"pinterest": {"boardServiceId": cfg["buffer"]["pinterest_board_id"],
                                                  "title": caps["pinterest"]["title"], "url": post["url"]}}},
     }

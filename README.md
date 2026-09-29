@@ -117,4 +117,5 @@ The computer needs to be on (or wake up) for the task to run. If it's asleep, th
 
 ## Changelog
 
+- 2026-09-29: first live run against Buffer. Field names all matched. Added alt text to images; `buffer.py setup` now lists Pinterest boards. Buffer's API didn't list the new Pinterest board, so its id was taken from the public Pinterest profile.
 - 2026-09-28: first version. Four layouts, Buffer drafts, examples from three posts.

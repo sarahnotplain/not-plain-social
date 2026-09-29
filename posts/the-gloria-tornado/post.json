@@ -16,5 +16,18 @@
       "title": "The Gloria Tornado: a childhood memory from the backseat",
       "description": "A memoir essay built from a single childhood memory in the backseat of a car. Narrative nonfiction about family and the moments that stay with us. From Not Plain, a memoir newsletter by Sarah."
     }
+  },
+  "buffer": {
+    "facebook": {
+      "id": "6abbfa31a784493a8ae4b2f7",
+      "status": "draft"
+    },
+    "instagram": {
+      "id": "6abbfa32a784493a8ae4b31a",
+      "status": "draft"
+    },
+    "pinterest": {
+      "error": "Failed to create post: Board not found"
+    }
   }
 }

@@ -16,5 +16,18 @@
       "title": "There, But Not Here: an essay on grief and old family photographs",
       "description": "A memoir essay about grief, family photographs, and the memories we build from pictures rather than experience. From Not Plain, a memoir newsletter by Sarah."
     }
+  },
+  "buffer": {
+    "facebook": {
+      "id": "6abbfa2f945e596c7038b171",
+      "status": "draft"
+    },
+    "instagram": {
+      "id": "6abbfa309340de4c73611aca",
+      "status": "draft"
+    },
+    "pinterest": {
+      "error": "Failed to create post: Board not found"
+    }
   }
 }
