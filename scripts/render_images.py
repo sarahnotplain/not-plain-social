@@ -3,6 +3,9 @@
 Usage:
     python scripts/render_images.py posts/<slug>/post.json      (or post-2.json, post-3.json)
 
+An optional "theme" in post.json ({"logo": file next to post.json, "site": label,
+"css": ":root{--cream:...}"}) restyles the images, e.g. for client mockups.
+
 Reads the post package, fills the chosen layout in templates/, and writes
 instagram.png (4:5, also used for Facebook) and pinterest.png (2:3) next to post.json.
 Variants (post-2.json) get matching names (instagram-2.png).
@@ -66,7 +69,7 @@ def fill(template, post, cfg, folder):
         "quote": post.get("quote", ""),
         "label": post.get("label") or "New essay",
         "date_label": post.get("date_label", ""),
-        "site": cfg.get("site_label", ""),
+        "site": (post.get("theme") or {}).get("site") or cfg.get("site_label", ""),
     }
     out = template
     for k, v in values.items():
@@ -74,7 +77,8 @@ def fill(template, post, cfg, folder):
         v = html.escape(v).replace(" —", "&nbsp;—").replace(" –", "&nbsp;–")
         out = out.replace("{{" + k + "}}", v)
     if "{{logo_src}}" in out:
-        out = out.replace("{{logo_src}}", data_uri(ROOT / "assets" / "logo.png"))
+        logo = (post.get("theme") or {}).get("logo")
+        out = out.replace("{{logo_src}}", data_uri(folder / logo if logo else ROOT / "assets" / "logo.png"))
     if "{{image_src}}" in out:
         out = out.replace("{{image_src}}", header_image(post, folder))
     return out
@@ -89,7 +93,8 @@ def main(post_path):
         sys.exit(f"post.json 'layout' must be one of {LAYOUTS}, got {layout!r}")
 
     body = fill((TEMPLATES / f"{layout}.html").read_text(), post, cfg, folder)
-    base_css = (TEMPLATES / "base.css").read_text()
+    # Optional per-package theme (used for client mockups): extra CSS that overrides the color tokens.
+    base_css = (TEMPLATES / "base.css").read_text() + "\n" + (post.get("theme") or {}).get("css", "")
 
     with sync_playwright() as pw:
         browser = pw.chromium.launch()
