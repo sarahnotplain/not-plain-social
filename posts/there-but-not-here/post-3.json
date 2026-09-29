@@ -10,11 +10,11 @@
   "date_label": "",
   "alt_text": "Dark card with the title There, But Not Here and the subtitle On grief, photographs, and memories that aren't really yours. Not Plain.",
   "captions": {
-    "instagram": "There, But Not Here.\n\nOn grief, photographs, and memories that aren't really yours. From Not Plain.\n\nRead it at the link in bio.\n\n#memoir #grief #griefjourney #narrativenonfiction",
-    "facebook": "There, But Not Here.\n\nOn grief, photographs, and memories that aren't really yours. From Not Plain.\n\nhttps://sarahnotplain.substack.com/p/there-but-not-here",
+    "instagram": "There, But Not Here.\n\nAn essay about the kind of grief that only arrives after years of living without someone. About a stack of 5x7 photos, a birthday my dad didn't get to have, and the mother who was always behind the camera.\n\nFrom Not Plain. Read it at the link in bio.\n\n#memoir #grief #griefjourney #narrativenonfiction",
+    "facebook": "There, But Not Here.\n\nAn essay about the kind of grief that only arrives after years of living without someone. About a stack of 5x7 photos, a birthday my dad didn't get to have, and the mother who was always behind the camera.\n\nFrom Not Plain. Read it here:\nhttps://sarahnotplain.substack.com/p/there-but-not-here",
     "pinterest": {
       "title": "There, But Not Here: a memoir essay on grief and a father's birthday",
-      "description": "A short memoir essay about grief that arrives years later, on what would have been a father's 62nd birthday, and the memories we build from photographs. From Not Plain, a memoir newsletter by Sarah."
+      "description": "A short memoir essay on grief, a father's birthday, and the memories we build from photographs rather than experience. Narrative nonfiction from Not Plain, a memoir newsletter by Sarah."
     }
   },
   "buffer": {
@@ -24,6 +24,10 @@
     },
     "instagram": {
       "id": "6abbfb75945e596c7038db33",
+      "status": "draft"
+    },
+    "pinterest": {
+      "id": "6abbfd2fc6624e8178516d0c",
       "status": "draft"
     }
   }

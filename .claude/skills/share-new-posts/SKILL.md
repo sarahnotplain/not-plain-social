@@ -35,6 +35,7 @@ Rules for the set:
 - Every package uses a **different quote** and, where possible, a **different layout**. Never repeat a quote within one article.
 - Every quote still follows all of CLAUDE.md's care rules. If the post doesn't have enough suitable lines, make fewer packages and say so in the report. Don't lower the bar to reach 3.
 - Paid posts: all quotes must come from the free preview. Often that means only 1 or 2 packages.
+- Captions follow "What a caption is for" in `brand/voice-and-captions.md`: hook, a 2 to 4 sentence scene from the post, an open loop, then the call to action. Use different details from the essay in each package.
 - Captions for packages 2 and 3 don't say "New". Use framing like "From *Title*, on Not Plain." and still point to the post (link in bio / the URL).
 - Hashtags can vary between packages, still 5 at most.
 

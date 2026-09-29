@@ -64,6 +64,14 @@ def main(path, check_images=False):
     if re.search(r"[\U0001F300-\U0001FAFF☀-➿]", ig + fb + pin.get("description", "")):
         errors.append("no emoji (house rule, see CLAUDE.md)")
 
+    # House style for the caption wording itself (her quoted words are left as she wrote them).
+    for name, text in (("instagram", ig), ("facebook", fb), ("pinterest", pin.get("description", ""))):
+        own = text.replace(quote, "") if quote else text
+        if "—" in own:
+            errors.append(f"{name}: no em dashes in caption wording (use a period or comma)")
+        if "!" in own:
+            errors.append(f"{name}: no exclamation points")
+
     if check_images:
         for f in (image_name(path, "instagram"), image_name(path, "pinterest")):
             if not (path.parent / f).exists():

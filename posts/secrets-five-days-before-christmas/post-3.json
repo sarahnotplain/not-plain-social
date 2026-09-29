@@ -10,11 +10,11 @@
   "date_label": "",
   "alt_text": "Dark card with the title Secrets: Five Days Before Christmas, 1990 and the subtitle I've asked my aunt to tell me this story at least fifteen times. Not Plain.",
   "captions": {
-    "instagram": "Secrets: Five Days Before Christmas, 1990.\n\nI've asked my aunt to tell me this story at least fifteen times. From Not Plain.\n\nRead it at the link in bio.\n\n#memoir #narrativenonfiction #truestory #substack",
-    "facebook": "Secrets: Five Days Before Christmas, 1990.\n\nI've asked my aunt to tell me this story at least fifteen times. From Not Plain.\n\nhttps://sarahnotplain.substack.com/p/secrets-five-days-before-christmas",
+    "instagram": "Secrets: Five Days Before Christmas, 1990.\n\nI've asked my aunt to tell me this story at least fifteen times. It starts in my grandparents' living room, under a Christmas tree bright enough to light the whole room. It ends in the backyard, under a trellis dripping with honeysuckle, with the hum of a car engine.\n\nFrom Not Plain. Read it at the link in bio.\n\n#memoir #narrativenonfiction #truestory #substack",
+    "facebook": "Secrets: Five Days Before Christmas, 1990.\n\nI've asked my aunt to tell me this story at least fifteen times. It starts in my grandparents' living room, under a Christmas tree bright enough to light the whole room. It ends in the backyard, under a trellis dripping with honeysuckle, with the hum of a car engine.\n\nFrom Not Plain. Read it here:\nhttps://sarahnotplain.substack.com/p/secrets-five-days-before-christmas",
     "pinterest": {
       "title": "Secrets: a true family story an aunt has retold at least fifteen times",
-      "description": "A memoir essay built from a story the author has asked her aunt to retell at least fifteen times: a December night in 1990 and the secrets at the start of her life. From Not Plain, a memoir newsletter by Sarah."
+      "description": "A true family story the author has asked her aunt to retell at least fifteen times: a Christmas tree sprayed with fake snow, a mother slipping away from the living room, and a car backing out of the garage. Memoir and narrative nonfiction from Not Plain, a memoir newsletter by Sarah."
     }
   },
   "buffer": {
@@ -24,6 +24,10 @@
     },
     "instagram": {
       "id": "6abbfb728db23fcd3a34d820",
+      "status": "draft"
+    },
+    "pinterest": {
+      "id": "6abbfd24c6624e8178516b7a",
       "status": "draft"
     }
   }

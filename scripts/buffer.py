@@ -4,6 +4,7 @@ Usage:
     python scripts/buffer.py setup                        # list channel IDs (+ Pinterest boards) for config.json
     python scripts/buffer.py introspect CreatePostInput   # show a GraphQL type's fields (for fixing field names)
     python scripts/buffer.py draft posts/<slug>/post.json [--dry-run] [--only facebook,instagram]
+    python scripts/buffer.py update posts/<slug>/post.json   # push edited captions to existing drafts
 
 `draft` creates one DRAFT per platform (Facebook, Instagram, Pinterest). Nothing is
 published: Sarah approves drafts in Buffer. Images must already be pushed to GitHub
@@ -157,6 +158,36 @@ def draft(path, dry_run=False, only=None):
         sys.exit(1)
 
 
+EDIT = """mutation($input: EditPostInput!) {
+  editPost(input: $input) {
+    ... on PostActionSuccess { post { id } }
+    ... on MutationError { message }
+  }
+}"""
+
+
+def update(path):
+    """Replace the caption text on drafts that already exist; still drafts afterward."""
+    path = pathlib.Path(path)
+    post, cfg = load_json(path), config()
+    inputs = build_inputs(post, cfg, path)
+    failed = False
+    for platform, existing in post.get("buffer", {}).items():
+        if not existing.get("id"):
+            continue
+        # Buffer validates the whole post on edit, so resend type/metadata and the image with the text.
+        inp = {"id": existing["id"], "saveToDraft": True,
+               **{k: inputs[platform][k] for k in ("text", "metadata", "assets")}}
+        out = gql(EDIT, {"input": inp})["editPost"]
+        if "post" in out:
+            print(f"{platform}: caption updated ({existing['id']})")
+        else:
+            failed = True
+            print(f"{platform}: FAILED - {out.get('message')}")
+    if failed:
+        sys.exit(1)
+
+
 if __name__ == "__main__":
     a = sys.argv[1:]
     if a[:1] == ["setup"]: setup()
@@ -164,4 +195,5 @@ if __name__ == "__main__":
     elif a[:1] == ["draft"] and len(a) >= 2:
         only = a[a.index("--only") + 1].split(",") if "--only" in a else None
         draft(a[1], "--dry-run" in a, only)
+    elif a[:1] == ["update"] and len(a) == 2: update(a[1])
     else: sys.exit(__doc__)
