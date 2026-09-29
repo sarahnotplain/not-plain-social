@@ -18,7 +18,7 @@ Hook tip: the first 2 seconds decide whether people stay, so film the opening li
 ## Visuals (no AI)
 
 - **Clip A:** film it yourself. Your hands going through a few real photos (backs, edges or shoulders only, if you'd rather not show faces), or you writing. Five seconds, natural light.
-- **Clips B and C:** your branded quote cards as slow-zoom clips (Claude can make these from the post images).
+- **Clips B and C:** your branded quote cards: `posts/there-but-not-here/pinterest.png` and `posts/secrets-five-days-before-christmas/pinterest.png` (tall versions that fit a phone screen). In TikTok or CapCut, add each as a photo and apply a slow zoom effect.
 - **End card:** `brand/tiktok/end-card.png`.
 
 Or keep it simple: film the whole thing talking to camera. For your audience, that may do best of all.
@@ -28,7 +28,7 @@ Or keep it simple: film the whole thing talking to camera. For your audience, th
 1. Film the opening line (or record the whole script as voice-over).
 2. Add Clips A, B, C in order, then the end card for the last 4 to 5 seconds.
 3. Turn on auto-captions. Most people watch without sound.
-5. Caption and hashtags below.
+4. Caption and hashtags below.
 
 ## Caption
 
