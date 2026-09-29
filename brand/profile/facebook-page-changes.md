@@ -1,6 +1,6 @@
 # Facebook Page: proposed changes
 
-Nothing has been changed yet. Reply "yes" (or tell me what to edit) and I'll make these in your Chrome.
+**Applied 2026-09-29** (bio option B). Page: facebook.com/sarahnotplain
 
 Current Page: 0 followers, no cover photo, no bio, category "Podcast", web address is a number, button says "Send Email", link is Linktree.
 
