@@ -11,3 +11,4 @@ posts/*/header.jpg
 __pycache__/
 *.pyc
 .venv/
+.tools/
