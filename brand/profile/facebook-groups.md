@@ -15,7 +15,7 @@ Groups reward taking part, not link-dropping. Read the rules before posting anyt
 
 Join these from your personal Facebook if you want them:
 
-- **We Love Memoirs** (8.8K, the biggest memoir *reader* group). No self-promotion except at organized events. Authors can email Victoria Twead (TopHen@VictoriaTwead.com) to be added to their author database and promotion events. Bans hashtags, religion, politics.
+- **We Love Memoirs** (8.8K, the biggest memoir *reader* group). No self-promotion except at organized events. Authors can email the admin (address is in the group rules) to be added to their author database and promotion events. Bans hashtags, religion, politics.
 - **Memoir Writers Collective** (2.5K). Links and promotion on **Fridays only**. No AI-written material.
 
 ## Other groups seen (not joined)
