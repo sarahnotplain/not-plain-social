@@ -13,7 +13,7 @@ so their raw URLs are public (Buffer has no upload endpoint).
 Needs BUFFER_API_KEY in the environment or in a .env file at the repo root
 (Buffer -> Settings -> API: https://publish.buffer.com/settings/api).
 """
-import json, os, pathlib, sys, time, urllib.request
+import json, os, pathlib, sys, time, urllib.parse, urllib.request
 from common import ROOT, config, image_name, load_json, save_json
 
 ENDPOINT = "https://api.buffer.com"
@@ -102,6 +102,14 @@ CREATE = """mutation($input: CreatePostInput!) {
 }"""
 
 
+def tracked(url, platform, post, path):
+    """Add UTM tags so Substack's stats show which platform (and which post) sent each reader."""
+    tags = {"utm_source": platform, "utm_medium": "social", "utm_campaign": post["slug"],
+            "utm_content": pathlib.Path(path).stem}          # post, post-2, post-3
+    sep = "&" if "?" in url else "?"
+    return f"{url}{sep}{urllib.parse.urlencode(tags)}"
+
+
 def build_inputs(post, cfg, path):
     ch = cfg["buffer"]["channels"]
     caps = post["captions"]
@@ -114,7 +122,8 @@ def build_inputs(post, cfg, path):
         return [{"image": a}]
     common = {"schedulingType": "automatic", "mode": "addToQueue", "saveToDraft": True, "needsApproval": False}
     return {
-        "facebook": {**common, "channelId": ch["facebook"], "text": caps["facebook"],
+        "facebook": {**common, "channelId": ch["facebook"],
+                     "text": caps["facebook"].replace(post["url"], tracked(post["url"], "facebook", post, path)),
                      "assets": img(square),
                      "metadata": {"facebook": {"type": "post"}}},
         "instagram": {**common, "channelId": ch["instagram"], "text": caps["instagram"],
@@ -123,7 +132,8 @@ def build_inputs(post, cfg, path):
         "pinterest": {**common, "channelId": ch["pinterest"], "text": caps["pinterest"]["description"],
                       "assets": img(tall),
                       "metadata": {"pinterest": {"boardServiceId": cfg["buffer"]["pinterest_board_id"],
-                                                 "title": caps["pinterest"]["title"], "url": post["url"]}}},
+                                                 "title": caps["pinterest"]["title"],
+                                                 "url": tracked(post["url"], "pinterest", post, path)}}},
     }
 
 
