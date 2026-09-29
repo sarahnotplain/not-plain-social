@@ -73,6 +73,8 @@ def fill(template, post, cfg, folder):
         # Keep dashes on the line with the word before them, never starting a new line.
         v = html.escape(v).replace(" —", "&nbsp;—").replace(" –", "&nbsp;–")
         out = out.replace("{{" + k + "}}", v)
+    if "{{logo_src}}" in out:
+        out = out.replace("{{logo_src}}", data_uri(ROOT / "assets" / "logo.png"))
     if "{{image_src}}" in out:
         out = out.replace("{{image_src}}", header_image(post, folder))
     return out

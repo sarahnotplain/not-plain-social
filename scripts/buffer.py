@@ -13,7 +13,7 @@ so their raw URLs are public (Buffer has no upload endpoint).
 Needs BUFFER_API_KEY in the environment or in a .env file at the repo root
 (Buffer -> Settings -> API: https://publish.buffer.com/settings/api).
 """
-import json, os, pathlib, sys, time, urllib.parse, urllib.request
+import hashlib, json, os, pathlib, sys, time, urllib.parse, urllib.request
 from common import ROOT, config, image_name, load_json, save_json
 
 ENDPOINT = "https://api.buffer.com"
@@ -77,21 +77,31 @@ def introspect(type_name):
 
 # ---------- drafts ----------
 
+def file_hash(path):
+    return hashlib.sha256(pathlib.Path(path).read_bytes()).hexdigest()
+
+
 def raw_url(cfg, slug, filename):
+    """Public GitHub link to an image. The ?v= tag changes whenever the image does,
+    so Buffer never reuses a cached copy of an older version."""
     g = cfg["github"]
-    return f"https://raw.githubusercontent.com/{g['owner']}/{g['repo']}/{g.get('branch', 'main')}/posts/{slug}/{filename}"
+    local = ROOT / "posts" / slug / filename
+    version = f"?v={file_hash(local)[:10]}" if local.exists() else ""
+    return f"https://raw.githubusercontent.com/{g['owner']}/{g['repo']}/{g.get('branch', 'main')}/posts/{slug}/{filename}{version}"
 
 
-def wait_until_public(url, tries=12):
+def wait_until_public(url, local, tries=30):
+    """Wait until GitHub serves exactly the local file (its CDN can lag a few minutes after a push)."""
+    want = file_hash(local)
     for _ in range(tries):
         try:
-            req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "Mozilla/5.0"})
-            if urllib.request.urlopen(req, timeout=20).status == 200:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            if hashlib.sha256(urllib.request.urlopen(req, timeout=20).read()).hexdigest() == want:
                 return
         except urllib.error.HTTPError:
             pass
-        time.sleep(5)
-    sys.exit(f"Image isn't publicly reachable yet: {url}\nDid you git push? Is the repo public?")
+        time.sleep(10)
+    sys.exit(f"GitHub isn't serving the current image yet: {url}\nDid you git push? Is the repo public?")
 
 
 CREATE = """mutation($input: CreatePostInput!) {
@@ -137,6 +147,12 @@ def build_inputs(post, cfg, path):
     }
 
 
+def wait_for_images(post, cfg, path):
+    for p in ("instagram", "pinterest"):
+        name = image_name(path, p)
+        wait_until_public(raw_url(cfg, post["slug"], name), path.parent / name)
+
+
 def draft(path, dry_run=False, only=None):
     path = pathlib.Path(path)
     post, cfg = load_json(path), config()
@@ -146,8 +162,7 @@ def draft(path, dry_run=False, only=None):
     if dry_run:
         print(json.dumps(inputs, indent=2, ensure_ascii=False)); return
 
-    for url in {raw_url(cfg, post["slug"], image_name(path, p)) for p in ("instagram", "pinterest")}:
-        wait_until_public(url)
+    wait_for_images(post, cfg, path)
 
     results = post.get("buffer", {})
     for platform, inp in inputs.items():
@@ -181,6 +196,7 @@ def update(path):
     path = pathlib.Path(path)
     post, cfg = load_json(path), config()
     inputs = build_inputs(post, cfg, path)
+    wait_for_images(post, cfg, path)
     failed = False
     for platform, existing in post.get("buffer", {}).items():
         if not existing.get("id"):

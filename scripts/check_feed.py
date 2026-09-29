@@ -99,6 +99,9 @@ def main():
         slug = slug_from_url(item["url"])
         item["slug"] = slug
         item["word_count"] = len(item["text"].split())
+        # Substack falls back to the publication logo when a post has no cover photo; that isn't a post photo.
+        if cfg.get("logo_image_id") and cfg["logo_image_id"] in (item.get("header_image") or ""):
+            item["header_image"] = None
         item["looks_paywalled"] = item["word_count"] < 150   # RSS only carries a preview of paid posts
         save_json(post_dir(slug) / "source.json", item)
         new.append({"slug": slug, "title": item["title"], "published": item["published"],

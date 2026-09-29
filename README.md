@@ -117,6 +117,7 @@ The computer needs to be on (or wake up) for the task to run. If it's asleep, th
 
 ## Changelog
 
+- 2026-09-29: rebranded the templates to match her Substack (logo on every image, black/kraft/lavender/cream, rust removed). Image links carry a `?v=<hash>` so Buffer picks up re-rendered images; `buffer.py` waits until GitHub serves the new file before sending it.
 - 2026-09-29: UTM tracking. Facebook and Pinterest links get `utm_source=<platform>&utm_medium=social&utm_campaign=<slug>&utm_content=<post|post-2|post-3>`, added in `buffer.py` so post.json keeps clean links. Instagram uses a tagged bio link instead.
 - 2026-09-29: three posts per article (post.json, post-2.json, post-3.json). Fuller captions that set a scene from the essay. `buffer.py update` pushes edited captions to existing drafts (editPost needs type/metadata and assets resent). `--only` flag on `draft`. Pinterest board id corrected after Buffer resynced the board.
 - 2026-09-29: first live run against Buffer. Field names all matched. Added alt text to images; `buffer.py setup` now lists Pinterest boards. Buffer's API didn't list the new Pinterest board, so its id was taken from the public Pinterest profile.

@@ -2,13 +2,14 @@
    --u is 1% of the image width, so every size scales with the canvas.
    Change colors here and every layout updates. */
 :root {
-  --cream: #F5F0E8;   /* matches her Substack background */
-  --paper: #E9E2D6;   /* slightly darker cream, behind the "print" */
-  --ink:   #1F1B17;   /* near-black, warm */
-  --rust:  #8A4B33;   /* accent: labels, rules */
-  --muted: #6B6259;   /* secondary text on cream */
-  --rule:  #D9D0C2;   /* hairlines on cream */
-  --sand:  #C9A88F;   /* accent on dark */
+  --cream:    #F5F0E8;   /* her Substack page background */
+  --lavender: #8882A1;   /* her Substack buttons/accents; background behind the "print" and photo */
+  --accent:   #6B6687;   /* deeper lavender: small labels and rules on cream (readable at small sizes) */
+  --black:    #000000;   /* her logo's background; the title card */
+  --kraft:    #B59C74;   /* the torn cardboard in her logo; labels on black */
+  --ink:      #1F1B17;   /* body text on cream */
+  --muted:    #6E6A66;   /* secondary text on cream */
+  --rule:     #D9D2C7;   /* hairlines on cream */
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { width: var(--w); height: var(--h); overflow: hidden; }
@@ -16,6 +17,7 @@ body { font-family: "Garamond", serif; color: var(--ink); -webkit-font-smoothing
 
 .mono  { font-family: "Plex Mono", monospace; letter-spacing: .14em; text-transform: uppercase; font-size: calc(var(--u) * 1.5); }
 .brand { font-size: calc(var(--u) * 3.2); font-weight: 500; letter-spacing: .02em; }
+.logo  { display: block; width: calc(var(--u) * 9); height: calc(var(--u) * 9); border-radius: calc(var(--u) * .9); }
 .abs   { position: absolute; }
 
 /* Text blocks that must never overflow: the renderer shrinks .fit until it fits inside .fitbox */
