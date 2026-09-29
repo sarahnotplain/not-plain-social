@@ -8,7 +8,7 @@ This repo turns new posts from Sarah's Substack, **Not Plain** (sarahnotplain.su
 
 Run the `share-new-posts` skill (`/share-new-posts`). It walks through every step. In short:
 
-check feed → write post.json, post-2.json, post-3.json (3 packages per article: layout, quote, captions) → validate → render images → look at them → git push → Buffer drafts → log → report
+check feed → write post.json, post-2.json, post-3.json (3 packages per article: layout, quote, captions) → validate → render images → look at them → git push → Buffer drafts → log → then one Substack Note (check_notes.py, at most 1 draft a day) → report
 
 ## Hard rules
 
@@ -31,8 +31,8 @@ check feed → write post.json, post-2.json, post-3.json (3 packages per article
 | `brand/style-guide.md` | Colors, fonts, the 4 layouts and when to use each |
 | `brand/voice-and-captions.md` | Caption rules per platform + worked examples |
 | `examples/` | Approved example packages (post.json + images). Match these. |
-| `templates/*.html`, `templates/base.css` | The layouts. Edit these when Sarah asks for design changes. |
-| `scripts/` | check_feed, validate_post, render_images, buffer, log_post |
+| `templates/*.html`, `templates/base.css` | The layouts (`note.html` is only for Substack Notes). Edit these when Sarah asks for design changes. |
+| `scripts/` | check_feed, check_notes, validate_post, render_images, buffer, log_post |
 | `posts/<slug>/` | One folder per shared post: `source.json` (local only), then per package `post.json` / `post-2.json` / `post-3.json` with matching `instagram(-N).png`, `pinterest(-N).png` |
 | `data/posted.json` | Log of what's been drafted/skipped. Never re-draft a logged post unless asked. |
 | `config.json` | Substack URL, GitHub repo, Buffer channel + board IDs |

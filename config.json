@@ -15,5 +15,12 @@
     },
     "pinterest_board_id": "1150880948467442014"
   },
-  "drafts_per_article": 3
+  "drafts_per_article": 3,
+  "notes": {
+    "user_id": 553794298,
+    "handle": "sarahnotplain",
+    "start_date": "2026-09-26",
+    "lookback_days": 14,
+    "per_day": 1
+  }
 }

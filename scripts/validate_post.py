@@ -34,7 +34,7 @@ def main(path, check_images=False):
 
     # Quotes must be Sarah's exact words.
     quote = post.get("quote", "")
-    if layout in ("quote", "print"):
+    if layout in ("quote", "print", "note"):
         if not quote:
             errors.append(f"layout '{layout}' needs a quote")
         elif norm(quote) not in norm(source.get("text", "")):

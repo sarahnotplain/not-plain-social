@@ -33,6 +33,7 @@
 | `title` | Dark, big title + italic subtitle, thin frame | The title and subtitle are the hook, or no line should be pulled out |
 | `print` | A tilted 5x7 print holding one short line | A short line (15 words or fewer), especially about memory, photos, dates or places |
 | `photo` | The post's header image as a bordered print, title below | The post has a header image |
+| `note` | Cream, upright serif text beside a thin rust rule, like a notebook page | Substack Notes only |
 
 Rotate the layouts so her feed doesn't repeat the same look twice in a row.
 

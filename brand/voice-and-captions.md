@@ -51,6 +51,15 @@ Each article gets up to three posts so the feed stays active between essays. The
 - Keep the same call to action: "Read it at the link in bio." on Instagram, the URL on Facebook.
 - Pinterest: use a different title angle for each package so the pins don't compete in search.
 
+## Substack Notes
+
+A note is short and has no scene to borrow, so the caption stays brief and points to the newsletter:
+
+- Hook: the note's words in quotation marks.
+- If the note shares one of her essays, one sentence from that essay's world (details from the essay itself), then "From *Title*, on Not Plain. Read it at the link in bio." / "Read it here:" + URL.
+- Otherwise: "From my notes on Substack. Not Plain is a memoir in progress. Subscribe to see how it unfolds." ("Not Plain is a memoir in progress. Subscribe to see how it unfolds." is her own line from the end of her posts.) Then "Link in bio." / the URL.
+- Don't explain or interpret the note. Let it stand.
+
 ## Hashtag pool (pick 3–5 that fit)
 
 #memoir #narrativenonfiction #grief #griefjourney #familysecrets #memoirwriting #writersofinstagram #substack #nonfiction #truestory #seattlewriters

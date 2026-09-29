@@ -197,6 +197,21 @@
         }
       ],
       "logged_at": "2026-09-29T18:02:34+00:00"
+    },
+    {
+      "slug": "note-346791189",
+      "title": "Notes from Not Plain",
+      "url": "https://sarahnotplain.substack.com",
+      "status": "drafted",
+      "variants": [
+        {
+          "file": "post.json",
+          "layout": "note",
+          "quote": "I refuse to have experienced and witnessed so much destruction and let that be all it was and is.",
+          "buffer": {}
+        }
+      ],
+      "logged_at": "2026-09-29T18:08:27+00:00"
     }
   ]
 }

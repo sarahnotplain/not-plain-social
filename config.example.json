@@ -3,13 +3,11 @@
   "site_label": "sarahnotplain.substack.com",
   "start_date": "2026-09-26",
   "drafts_per_article": 3,
-
   "github": {
     "owner": "YOUR-GITHUB-USERNAME",
     "repo": "not-plain-social",
     "branch": "main"
   },
-
   "buffer": {
     "channels": {
       "facebook": "",
@@ -17,5 +15,12 @@
       "pinterest": ""
     },
     "pinterest_board_id": ""
+  },
+  "notes": {
+    "user_id": 553794298,
+    "handle": "sarahnotplain",
+    "start_date": "2026-09-26",
+    "lookback_days": 14,
+    "per_day": 1
   }
 }

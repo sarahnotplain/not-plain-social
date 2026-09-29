@@ -132,11 +132,35 @@ git commit -m "Log: <slug>"
 git push
 ```
 
+## 7b. Substack Notes (at most one draft per day)
+
+After the articles, do the same for Notes:
+
+```
+.venv/bin/python scripts/check_notes.py
+```
+
+It lists her recent Notes that haven't been drafted or skipped. Pick **at most `notes.per_day` (1)** to draft today.
+
+- **Draft:** notes that stand on their own as writing: lines about memory, grief, family, place, or what Not Plain is and why she writes it (framing notes that name the murder are allowed; she approves everything in Buffer).
+- **Skip and log** (`log_post.py --skip note-<id> "reason"`): everyday chatter, Substack/platform talk, questions to readers, jokes, anything that needs other context to make sense, and anything the care rules in CLAUDE.md rule out.
+- **Leave for another day:** good notes you didn't pick today. Don't log them; they stay in the pool for `notes.lookback_days`.
+- **Exact words.** The quote is copied from the note like any other quote. If a note contains emoji, use only whole sentences without them. If a note has a typo, don't fix it: leave that note for another day and mention it in the report so Sarah can decide.
+
+Write `posts/note-<id>/post.json`:
+
+- `layout`: `"note"`, `label`: `"From my notes"`, `title`: `"Notes from Not Plain"`.
+- `url`: if `source.json` has `shares_post`, that essay's URL. Otherwise the Substack home page (`substack_url` in config).
+- Captions follow "Substack Notes" in `brand/voice-and-captions.md`.
+
+Then validate, render, look, push, draft and log it exactly like an article package (step 3 onward), with just the one file.
+
 ## 8. Report to Sarah
 
 Keep the report short and in plain language:
 
 - which posts were drafted, and for each package the layout and quote used
+- which note was drafted (if any), which were skipped and why, and any good ones left for another day
 - that the drafts are waiting in Buffer for her approval
 - any posts that were skipped, and why
 - any errors

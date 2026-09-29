@@ -10,7 +10,7 @@ SIZES = {                       # file name -> (width, height)
     "instagram": (1080, 1350),  # 4:5, also used for Facebook
     "pinterest": (1000, 1500),  # 2:3
 }
-LAYOUTS = ("quote", "title", "print", "photo")
+LAYOUTS = ("quote", "title", "print", "photo", "note")   # "note" is only for Substack Notes
 
 
 def config():
