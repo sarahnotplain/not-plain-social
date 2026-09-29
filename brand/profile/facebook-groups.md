@@ -13,7 +13,7 @@ Groups reward taking part, not link-dropping. Read the rules before posting anyt
 
 ## Personal profile only (Pages can't join)
 
-Join these from your personal Facebook if you want them:
+Not joining: Sarah doesn't use her personal profile. Listed for reference only.
 
 - **We Love Memoirs** (8.8K, the biggest memoir *reader* group). No self-promotion except at organized events. Authors can email the admin (address is in the group rules) to be added to their author database and promotion events. Bans hashtags, religion, politics.
 - **Memoir Writers Collective** (2.5K). Links and promotion on **Fridays only**. No AI-written material.
@@ -23,6 +23,11 @@ Join these from your personal Facebook if you want them:
 - Secrets Of A Memoirist (3.2K, public)
 - Telling Your Story: Memoir and Autobiography Writing Group (2.8K, private)
 - Women Writers: a Community for Connection and Inspiration (656, public)
+
+## Posted
+
+- 2026-09-29, Substack Writers & Readers Community: intro + link to There, But Not Here. Live.
+- 2026-09-29, Memoir Writers: intro (no link) asking how others handle scenes they only know secondhand. Awaiting admin approval. The one-time memoir share is still unused.
 
 ## A simple weekly rhythm (15 minutes, a few times a week)
 
