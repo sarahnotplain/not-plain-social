@@ -201,6 +201,12 @@ def update(path):
     for platform, existing in post.get("buffer", {}).items():
         if not existing.get("id"):
             continue
+        # Only touch drafts. Editing a queued post through the API turns it back into a draft,
+        # which silently un-schedules something Sarah already approved.
+        status = gql("query($id: PostId!){ post(input:{id:$id}){ status } }", {"id": existing["id"]})["post"]["status"]
+        if status != "draft":
+            print(f"{platform}: {status}, left unchanged (edit it in Buffer if needed)")
+            continue
         # Buffer validates the whole post on edit, so resend type/metadata and the image with the text.
         inp = {"id": existing["id"], "saveToDraft": True,
                **{k: inputs[platform][k] for k in ("text", "metadata", "assets")}}
