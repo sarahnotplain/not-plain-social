@@ -212,6 +212,54 @@
         }
       ],
       "logged_at": "2026-09-29T18:08:27+00:00"
+    },
+    {
+      "slug": "note-346709476",
+      "status": "skipped",
+      "reason": "intro note, platform chatter",
+      "logged_at": "2026-09-29T18:08:37+00:00"
+    },
+    {
+      "slug": "note-346854083",
+      "status": "skipped",
+      "reason": "platform chatter, question to readers",
+      "logged_at": "2026-09-29T18:08:37+00:00"
+    },
+    {
+      "slug": "note-347539285",
+      "status": "skipped",
+      "reason": "question to readers asking for recommendations",
+      "logged_at": "2026-09-29T18:08:37+00:00"
+    },
+    {
+      "slug": "note-347576655",
+      "status": "skipped",
+      "reason": "platform chatter",
+      "logged_at": "2026-09-29T18:08:37+00:00"
+    },
+    {
+      "slug": "note-348120490",
+      "status": "skipped",
+      "reason": "platform chatter",
+      "logged_at": "2026-09-29T18:08:37+00:00"
+    },
+    {
+      "slug": "note-348152985",
+      "status": "skipped",
+      "reason": "joke, off topic",
+      "logged_at": "2026-09-29T18:08:37+00:00"
+    },
+    {
+      "slug": "note-348337591",
+      "status": "skipped",
+      "reason": "about the automation, not the writing",
+      "logged_at": "2026-09-29T18:08:37+00:00"
+    },
+    {
+      "slug": "note-348006593",
+      "status": "skipped",
+      "reason": "needs the essay for context; essay drafts already cover it",
+      "logged_at": "2026-09-29T18:08:38+00:00"
     }
   ]
 }
