@@ -1,0 +1,18 @@
+{
+  "substack_url": "https://sarahnotplain.substack.com",
+  "site_label": "sarahnotplain.substack.com",
+  "start_date": "2026-09-26",
+  "github": {
+    "owner": "sarahnotplain",
+    "repo": "not-plain-social",
+    "branch": "main"
+  },
+  "buffer": {
+    "channels": {
+      "facebook": "6abaf243ea19ca0bde1a712f",
+      "instagram": "6abaf17bea19ca0bde1a5192",
+      "pinterest": "6abaf1c6ea19ca0bde1a5f58"
+    },
+    "pinterest_board_id": "1150880948467441935"
+  }
+}

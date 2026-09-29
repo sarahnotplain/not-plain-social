@@ -1,0 +1,13 @@
+# secrets
+.env
+config.local.json
+
+# Full post text and downloaded header images stay on this computer only.
+# The repo is public (so Buffer can reach the images) and paid posts must not leak.
+posts/*/source.json
+posts/*/header.jpg
+
+.DS_Store
+__pycache__/
+*.pyc
+.venv/

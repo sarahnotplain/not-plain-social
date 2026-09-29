@@ -1,0 +1,22 @@
+/* Shared styles for every Not Plain layout.
+   --u is 1% of the image width, so every size scales with the canvas.
+   Change colors here and every layout updates. */
+:root {
+  --cream: #F5F0E8;   /* matches her Substack background */
+  --paper: #E9E2D6;   /* slightly darker cream, behind the "print" */
+  --ink:   #1F1B17;   /* near-black, warm */
+  --rust:  #8A4B33;   /* accent: labels, rules */
+  --muted: #6B6259;   /* secondary text on cream */
+  --rule:  #D9D0C2;   /* hairlines on cream */
+  --sand:  #C9A88F;   /* accent on dark */
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: var(--w); height: var(--h); overflow: hidden; }
+body { font-family: "Garamond", serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+.mono  { font-family: "Plex Mono", monospace; letter-spacing: .14em; text-transform: uppercase; font-size: calc(var(--u) * 1.5); }
+.brand { font-size: calc(var(--u) * 3.2); font-weight: 500; letter-spacing: .02em; }
+.abs   { position: absolute; }
+
+/* Text blocks that must never overflow: the renderer shrinks .fit until it fits inside .fitbox */
+.fitbox { display: flex; flex-direction: column; justify-content: center; overflow: hidden; }

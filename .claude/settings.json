@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/*)",
+      "Bash(.venv/bin/python scripts/*)",
+      "Bash(git status*)",
+      "Bash(git pull*)",
+      "Bash(git add posts/* data/*)",
+      "Bash(git add posts/*)",
+      "Bash(git add data/*)",
+      "Bash(git commit *)",
+      "Bash(git push*)"
+    ]
+  }
+}

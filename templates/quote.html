@@ -1,0 +1,19 @@
+<!-- QUOTE CARD: cream, italic pull quote, post title underneath.
+     Best for: posts with one strong, self-contained line. -->
+<body style="background: var(--cream)">
+  <div class="abs" style="left: calc(var(--u)*8); top: calc(var(--u)*8)">
+    <div class="mono" style="color: var(--rust)">{{label}}</div>
+    <div style="width: calc(var(--u)*6); height: 2px; background: var(--rust); margin-top: calc(var(--u)*2.2)"></div>
+  </div>
+
+  <div class="abs fitbox" style="left: calc(var(--u)*8); right: calc(var(--u)*10); top: calc(var(--u)*18); bottom: calc(var(--u)*22)">
+    <div class="fit" style="font-style: italic; font-size: calc(var(--u)*6.6); line-height: 1.22">“{{quote}}”</div>
+    <div style="margin-top: calc(var(--u)*5); font-size: calc(var(--u)*3); color: var(--muted)">from <span style="color: var(--ink)">{{title}}</span></div>
+  </div>
+
+  <div class="abs" style="left: calc(var(--u)*8); right: calc(var(--u)*8); bottom: calc(var(--u)*7);
+       border-top: 1px solid var(--rule); padding-top: calc(var(--u)*3); display: flex; justify-content: space-between; align-items: baseline">
+    <div class="brand">Not Plain</div>
+    <div class="mono" style="color: var(--muted)">{{site}}</div>
+  </div>
+</body>
