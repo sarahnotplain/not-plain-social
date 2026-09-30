@@ -29,26 +29,25 @@
       },
       {
         "kind": "line",
-        "label": "the road",
-        "text": "The road is lined with blackberry bushes and overgrown trees",
+        "label": "Gloria",
+        "text": "I’m dressed and watching Gloria tornado through the house — of course it’s stressful, everything always is, and of course we’re late.",
         "bg": "cream"
       },
       {
         "kind": "print",
-        "number": "02",
-        "label": "the car",
+        "label": "the forest green Pontiac",
         "text": "Finally, she loads us into the forest green Pontiac."
       },
       {
         "kind": "line",
-        "label": "the backseat",
-        "text": "…a tiny raised middle seat between us.",
+        "label": "the driver’s seat",
+        "text": "My mom gets in the driver’s seat and throws her things — she always has so many things — into the passenger seat, and we’re off.",
         "bg": "lavender"
       },
       {
         "kind": "line",
-        "label": "winding dirt road",
-        "text": "We start the drive from our house down the miles-long winding dirt road",
+        "label": "blackberry bushes",
+        "text": "The road is lined with blackberry bushes and overgrown trees, two big berms on either side to help prevent flooding when it rains.",
         "bg": "cream"
       },
       {

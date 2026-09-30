@@ -14,7 +14,7 @@ Needs BUFFER_API_KEY in the environment or in a .env file at the repo root
 (Buffer -> Settings -> API: https://publish.buffer.com/settings/api).
 """
 import hashlib, json, os, pathlib, sys, time, urllib.parse, urllib.request
-from common import ROOT, config, image_name, load_json, save_json
+from common import ROOT, config, image_name, load_json, save_json, slide_names
 
 ENDPOINT = "https://api.buffer.com"
 
@@ -85,7 +85,7 @@ def raw_url(cfg, slug, filename):
     """Public GitHub link to an image. The ?v= tag changes whenever the image does,
     so Buffer never reuses a cached copy of an older version."""
     g = cfg["github"]
-    local = ROOT / "posts" / slug / filename
+    local = (ROOT / "posts" / slug / filename)
     version = f"?v={file_hash(local)[:10]}" if local.exists() else ""
     return f"https://raw.githubusercontent.com/{g['owner']}/{g['repo']}/{g.get('branch', 'main')}/posts/{slug}/{filename}{version}"
 
@@ -125,20 +125,31 @@ def build_inputs(post, cfg, path):
     caps = post["captions"]
     square = raw_url(cfg, post["slug"], image_name(path, "instagram"))
     tall = raw_url(cfg, post["slug"], image_name(path, "pinterest"))
-    def img(url):
+    def img(url, alt=None):
         a = {"url": url}
-        if post.get("alt_text"):
-            a["metadata"] = {"altText": post["alt_text"]}
+        if alt or post.get("alt_text"):
+            a["metadata"] = {"altText": alt or post["alt_text"]}
         return [{"image": a}]
+    # Instagram gets the carousel when there is one, and Facebook gets the same slides as a
+    # multi-photo post. Pinterest keeps the single tall image.
+    car = post.get("carousel")
+    if car:
+        ig_assets = [a for s, name in zip(car["slides"], slide_names(path, post))
+                     for a in img(raw_url(cfg, post["slug"], name), s.get("alt") or s.get("text"))]
+        ig_type = "carousel"
+        fb_assets = ig_assets
+    else:
+        ig_assets, ig_type = img(square), "post"
+        fb_assets = img(square)
     common = {"schedulingType": "automatic", "mode": "addToQueue", "saveToDraft": True, "needsApproval": False}
     return {
         "facebook": {**common, "channelId": ch["facebook"],
                      "text": caps["facebook"].replace(post["url"], tracked(post["url"], "facebook", post, path)),
-                     "assets": img(square),
+                     "assets": fb_assets,
                      "metadata": {"facebook": {"type": "post"}}},
         "instagram": {**common, "channelId": ch["instagram"], "text": caps["instagram"],
-                      "assets": img(square),
-                      "metadata": {"instagram": {"type": "post", "shouldShareToFeed": True}}},
+                      "assets": ig_assets,
+                      "metadata": {"instagram": {"type": ig_type, "shouldShareToFeed": True}}},
         "pinterest": {**common, "channelId": ch["pinterest"], "text": caps["pinterest"]["description"],
                       "assets": img(tall),
                       "metadata": {"pinterest": {"boardServiceId": cfg["buffer"]["pinterest_board_id"],
@@ -148,8 +159,7 @@ def build_inputs(post, cfg, path):
 
 
 def wait_for_images(post, cfg, path):
-    for p in ("instagram", "pinterest"):
-        name = image_name(path, p)
+    for name in [image_name(path, "instagram"), image_name(path, "pinterest")] + slide_names(path, post):
         wait_until_public(raw_url(cfg, post["slug"], name), path.parent / name)
 
 
