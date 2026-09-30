@@ -90,12 +90,14 @@ def overlays(post, lines, tmp):
     return paths
 
 
-def pingpong(motion, tmp):
-    """Forward then backward, cropped to 9:16, so the loop never jumps."""
+def pingpong(motion, tmp, bounce=True):
+    """Cropped to 9:16. bounce=True plays forward then backward so the loop never jumps;
+    use "bounce": false for clips made with the same start and end frame (they loop already)."""
     out = tmp / "pingpong.mp4"
+    tail = "split[a][b];[b]reverse[r];[a][r]concat=n=2:v=1[v]" if bounce else "null[v]"
     subprocess.run([FFMPEG, "-y", "-loglevel", "error", "-i", str(motion), "-filter_complex",
                     f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps={FPS},"
-                    f"setsar=1,split[a][b];[b]reverse[r];[a][r]concat=n=2:v=1[v]",
+                    f"setsar=1,{tail}",
                     "-map", "[v]", "-an", "-c:v", "libx264", "-crf", "16", "-pix_fmt", "yuv420p", str(out)],
                    check=True)
     return out
@@ -121,7 +123,7 @@ def render(path):
     with tempfile.TemporaryDirectory() as d:
         tmp = pathlib.Path(d)
         png = overlays(post, lines, tmp)
-        bg = pingpong(motion, tmp)
+        bg = pingpong(motion, tmp, reel.get("bounce", True))
         args = [FFMPEG, "-y", "-loglevel", "error", "-stream_loop", "-1", "-t", f"{total:.2f}", "-i", str(bg)]
         names = ["shade"] + [f"line{i}" for i in range(len(lines))] + ["end"]
         for n in names:
