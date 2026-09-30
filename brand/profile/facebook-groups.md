@@ -11,6 +11,19 @@ Groups reward taking part, not link-dropping. Read the rules before posting anyt
 | The Memoir Writers' Book Club | Pending approval | 1.7K, private | **Friday** promotions thread only. |
 | Substack Writers | Pending approval | 6.9K, private | Daily **"Share Your Newsletter"** thread only. Engage with other writers. |
 
+## Publishing & indie author groups (joined 2026-09-29 as the Page)
+
+| Group | Status | Activity (posts/month) | Notes |
+|---|---|---|---|
+| Indie Authors International (45.9K) | Joined, posting pending review | 321 | Don't sell services or books in other people's comments. Disclosed the service honestly in entry answers. |
+| I <3 Indie Authors & Readers (14.6K) | Joined | 286 | Readers and authors; memoir readers possible. |
+| Awesome Authors Supporting Authors (9.5K) | Joined | 147 | No self-promotion or spam; author interviews/podcasts welcome. |
+| Self-Publishing & Bestseller Authors Community (1.6K) | Joined | 155 | Small, engaged. |
+| I Need a Literary Agent (7.7K) | Joined | 126 | For the memoir's path to a book deal. |
+| Seattle Writers' and Readers' Network (5K) | Joined | 58 | Local: readings, events, calls for submissions. |
+
+Skipped (inactive despite big member counts, or promo dumps): Self Publishing Community (25 posts/month, bans self-promo and "DM me"), Self Publishing Author Help (9/month), Newsletter Swaps (6/month), and every "90+ posts a day" book-promo group.
+
 ## Personal profile only (Pages can't join)
 
 Not joining: Sarah doesn't use her personal profile. Listed for reference only.
