@@ -49,5 +49,11 @@
         "crop": "60% 40%"
       }
     ]
+  },
+  "buffer": {
+    "instagram": {
+      "id": "posted-manually",
+      "status": "posted by Sarah in the Instagram app, 2026-09-30"
+    }
   }
 }
