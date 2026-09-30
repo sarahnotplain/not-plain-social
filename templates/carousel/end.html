@@ -1,0 +1,13 @@
+<!-- CAROUSEL LAST SLIDE (end): the turn. The art fading into black, her last line big in italic,
+     then "Read the rest in <title>. Link in bio." Without art, plain black. -->
+<body style="background: var(--black); color: var(--cream)">
+  <div class="abs" style="left: 0; right: 0; top: 0; height: 58%; {{art_css}}"></div>
+  <div class="abs" style="left: 0; right: 0; top: 0; height: 58%; background: linear-gradient(180deg, rgba(0,0,0,0) 55%, #000 100%); {{art_only}}"></div>
+  <div class="abs fitbox" style="left: calc(var(--u)*8); right: calc(var(--u)*8); top: calc({{end_top}} - var(--u)*16); height: calc(var(--u)*34); justify-content: flex-end">
+    <div class="fit" style="font-size: calc(var(--u)*11); line-height: 1.05; font-style: italic; padding-bottom: .15em; text-shadow: 0 2px 20px rgba(0,0,0,.6)">{{text}}</div>
+  </div>
+  <div class="abs" style="left: calc(var(--u)*8); right: calc(var(--u)*8); top: calc({{end_top}} + var(--u)*21); font-size: calc(var(--u)*3.6); line-height: 1.35; color: #D8D0C4">{{cta_html}}</div>
+  <div class="abs" style="left: calc(var(--u)*8); right: calc(var(--u)*8); bottom: calc(var(--u)*7); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #333; padding-top: calc(var(--u)*3)">
+    <img class="logo" src="{{logo_src}}" alt=""><div class="mono" style="color: #A9A29A">{{site}}</div>
+  </div>
+</body>

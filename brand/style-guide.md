@@ -40,9 +40,32 @@ No other accent colors (the old rust is gone).
 | `title` | Black, logo top left, big title + italic subtitle | The title and subtitle are the hook, or no line should be pulled out |
 | `print` | A tilted cream 5x7 print on lavender, logo + title below | A short line (15 words or fewer), especially about memory, photos, dates or places |
 | `photo` | The post's photo as a bordered print on lavender, title below | The post has a header image |
+| `artline` | The post's art across the top, a lavender rule, her line in italic on cream below | The post has a header image and a line of 30 words or fewer |
+| `cover` | The post's art full-bleed, fading to near-black at the bottom; serif title, subtitle, italic "Not Plain", logo bottom right | The post has a header image (inspired by Substack's share image) |
+| `poster` | The post's art dimmed and softly blurred, title large and centered in serif capitals, a short kraft rule | The post has a header image and a short, strong title |
+| `manuscript` | Her line typed in mono on a ruled draft page, marked with lavender highlighter | Lines about memory, noticing or writing, 30 words or fewer |
 | `note` | Cream, upright serif text beside a thin lavender rule, logo bottom left | Substack Notes only |
 
-Rotate the layouts so her feed doesn't repeat the same look twice in a row.
+Sarah wants the feed to look dynamic, not cut and paste. Rotate the layouts so the same look never appears twice in a row, and mix light cards with dark or colored ones.
+
+## Lavender stays
+
+`print` and `photo` always sit on lavender, her signature color. (Black and kraft stages were tried and dropped on 2026-09-29.) The print's tilt varies per post (4 angles, chosen automatically), so no two prints sit the same way.
+
+A 3x3 mock of the full mix is in `private/variety-preview/feed-mock.jpg` (approved 2026-09-29).
+
+## Instagram carousels
+
+Instagram gets a carousel (`templates/carousel/`); Facebook and Pinterest get the single image. Slide kinds:
+
+| Kind | Looks like |
+|---|---|
+| `hook` | Black, big serif hook on the left, a tall close crop of the art on the right, an optional numbered list in mono, "Swipe →" in kraft |
+| `line` | Art strip on top (a different crop each slide, or panning across one painting), big number, mono label, her line in italic; cream, lavender or black |
+| `print` | Her line on a tilted cream print on lavender, like flipping through an album |
+| `end` | The art fading into black, her last line big in italic, "Read the rest in *Title*. Link in bio." and the logo |
+
+Styles rotate: `scene`, `details`, `panorama`, `album` (see the share-new-posts skill). Approved direction 2026-09-29; test renders are in `private/carousel-test/`.
 
 ## Examples
 

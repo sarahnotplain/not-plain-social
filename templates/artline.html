@@ -1,0 +1,17 @@
+<!-- ART + LINE: the post's public domain art full-bleed on top, one line of hers on cream below.
+     Only when the post has a header image. -->
+<body style="background: var(--cream)">
+  <div class="abs" style="left: 0; right: 0; top: 0; height: 56%; background: url('{{image_src}}') center 28%/cover no-repeat; filter: saturate(.85)"></div>
+  <div class="abs" style="left: 0; right: 0; top: 56%; height: 1.2%; background: var(--lavender)"></div>
+  <div class="abs fitbox" style="left: calc(var(--u)*8); right: calc(var(--u)*8); top: 60%; bottom: calc(var(--u)*19)">
+    <div class="fit" style="font-style: italic; font-size: calc(var(--u)*5.8); line-height: 1.22">“{{quote}}”</div>
+  </div>
+  <div class="abs" style="left: calc(var(--u)*8); right: calc(var(--u)*8); bottom: calc(var(--u)*6);
+       border-top: 1px solid var(--rule); padding-top: calc(var(--u)*3); display: flex; justify-content: space-between; align-items: center">
+    <div style="display:flex; align-items:center; gap: calc(var(--u)*2.5)">
+      <img class="logo" src="{{logo_src}}" alt="" style="width: calc(var(--u)*7); height: calc(var(--u)*7)">
+      <div style="font-size: calc(var(--u)*3); color: var(--ink)">{{title}}</div>
+    </div>
+    <div class="mono" style="color: var(--muted)">{{site}}</div>
+  </div>
+</body>

@@ -41,12 +41,58 @@ Rules for the set:
 
 Read `posts/<slug>/source.json` in full. Also read `brand/voice-and-captions.md` and one or two packages in `examples/` so your output matches them.
 
-**Pick the layouts.** Run `.venv/bin/python scripts/log_post.py --recent` so `post.json` doesn't repeat the last layout used.
+**Pick the layouts.** Sarah wants her feed to look dynamic, never cut and paste. Run `.venv/bin/python scripts/log_post.py --recent` and plan against it:
 
-- `photo`: only if `header_image` is set. Prefer it when it is.
-- `quote`: if there's a strong line of her own narration, under about 35 words.
-- `print`: if there's a short line (15 words or fewer), especially about memory, photos, dates or places.
+- The 3 packages of one article always use **3 different layouts**.
+- Don't reuse a layout that appears in the most recent logged entry, unless there's no other fit.
+- Mix light and dark: in the feed, avoid two cream cards (`quote`, `manuscript`, `artline`) back to back when a `print`, `photo`, `cover`, `poster` or `title` could go between them.
+
+The layouts:
+
+- `photo`: only if `header_image` is set. The art as a framed print with the title.
+- `artline`: only if `header_image` is set. The art across the top with a line of hers below (30 words or fewer).
+- `cover`: only if `header_image` is set. The art full-bleed fading to dark, with title, subtitle and "Not Plain" (like Substack's own share image).
+- `poster`: only if `header_image` is set. The art dimmed full-bleed with the title large and centered in capitals. Best for strong, short titles. Skip it if the art is too busy for text.
+- When a post has art, use two of the art layouts (`photo`, `artline`, `cover`, `poster`) across its 3 packages, and pick different ones from the last article that had art.
+- `quote`: a strong line of her own narration, under about 35 words.
+- `print`: a short line (15 words or fewer), especially about memory, photos, dates or places.
+- `manuscript`: her line typed on a draft page with a lavender highlight (30 words or fewer). Good for lines about memory, noticing, or writing itself.
 - `title`: when no single line stands alone, or the best lines are too sensitive to pull out.
+
+
+Lavender is her signature color: `print` and `photo` always sit on lavender. The print's tilt varies automatically.
+
+**Build the Instagram carousel.** Sarah considers carousels very important: Instagram needs to stop the scroll, and a single quote or title card doesn't. Facebook and Pinterest keep the single image from `layout`; Instagram gets the carousel instead.
+
+- `post.json` always gets a carousel if the post has enough suitable lines (4 or more). `post-2.json` may get one too, in a different style. `post-3.json` stays a single image.
+- Rotate the style so carousels don't feel templated. Check `log_post.py --recent` (it shows `layout+style`) and don't repeat the last style used:
+  - `scene`: one moment told in steps. The hook sets up a question, each slide is a step, and the end is the turn. Example: "…there were only three places she could have gone" → the kitchen → the garage → the back door → "Their eyes met."
+  - `details`: one vivid, concrete object or image from the essay per slide (the tree sprayed with fake snow, the honeysuckle trellis). Use `print` slides for some of them.
+  - `panorama`: set `"panorama": true`. One painting pans across the middle slides. Only for wide art (landscapes).
+  - `album`: for essays about photographs or memory. Mostly `print` slides, each one a picture or memory she describes.
+- Slides: 4 to 7 is best (3 to 10 allowed). First is `hook`, last is `end`, and the middle ones are `line` or `print`. Vary the `bg` of `line` slides (`cream`, `lavender`, `black`) and give each a different `crop` of the art, so no two slides look the same.
+- **Every slide's text is her exact words**, like any quote. If a line starts mid-sentence, begin it with "…" and keep her lowercase. If it stops mid-sentence, end it with "…". Never capitalize a fragment or add a period she didn't write.
+- Labels, the hook's `list` and the `eyebrow` should be her wording too (the validator warns otherwise). Short: 1 to 4 words.
+- The hook should make someone swipe. Use a question the essay sets up, a strong opening line, or a surprising detail. Don't just repeat the title.
+- The end slide is the turn or an open loop, and never the resolution. It adds "Read the rest in *Title*. Link in bio." automatically ("Subscribe to read…" for paid posts).
+- All care rules still apply to every slide: no names that aren't in the title/subtitle, and nothing about the violence, weapons or court.
+- The Instagram caption for a carousel still follows the voice guide, but keep it shorter (the slides tell the scene). Open with a hook, and give 1 or 2 sentences of context, "Swipe through.", then the call to action and hashtags.
+
+```json
+"carousel": {
+  "style": "scene",
+  "slides": [
+    {"kind": "hook", "eyebrow": "Five days before Christmas", "text": "…there were only three places she could have gone",
+     "list": ["the kitchen", "the garage", "the back door"], "crop": "58% 30%"},
+    {"kind": "line", "label": "The kitchen", "text": "…the kitchen was empty", "crop": "30% 22%", "bg": "cream"},
+    {"kind": "line", "label": "The garage", "text": "…the garage door was closed like it always was", "crop": "50% 70%", "bg": "lavender"},
+    {"kind": "print", "label": "The back door", "text": "She followed the stone path and when she reached the wooden trellis, dripping with honeysuckle, she heard it…"},
+    {"kind": "end", "text": "Their eyes met.", "crop": "52% 32%"}
+  ]
+}
+```
+
+Slide options: `crop` ("x% y%", which part of the art to show) and `zoom` (bigger = closer). Set `"art": false` to leave the art off a slide. `number` (defaults to its position) and `alt` (defaults to the slide text) are also available. Without a `header_image`, the slides render text-only. Render and **look at every slide** before pushing: check the crops for awkward framing and make sure no text is cut off.
 
 **Pick the quote.** Copy it exactly from `source.json`. Choose a line that makes someone want to read on without needing context, and that follows the care rules.
 
@@ -102,6 +148,14 @@ If an image looks wrong, fix it (a different quote or layout) and render again. 
 ```
 .venv/bin/python scripts/validate_post.py posts/<slug>/post.json --images
 ```
+
+**Reel:** for the package with a carousel, also make the video version:
+
+```
+.venv/bin/python scripts/render_reel.py posts/<slug>/post.json
+```
+
+It writes `private/reels/<slug>(-N).mp4` (not committed). Save a Reel caption next to it as `private/reels/<slug>(-N).txt`: the Instagram caption without "Swipe through." Sarah posts Reels herself from her phone, because she adds a trending sound in the app. If `private/reels/motion/<slug>.mp4` exists (an animated version of the art, see `private/growth/higgsfield.md`), the Reel uses it automatically.
 
 ## 5. Publish the images (so Buffer can reach them)
 
@@ -165,4 +219,4 @@ Keep the report short and in plain language:
 - any posts that were skipped, and why
 - any errors
 
-Show her the Instagram image for each package.
+Show her the Instagram image for each package, and tell her which Reel is ready in `private/reels/`.

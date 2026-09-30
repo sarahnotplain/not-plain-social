@@ -17,8 +17,8 @@ def main(a):
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     if a[:1] == ["--recent"]:
         for p in data["posts"][-5:]:
-            layouts = ",".join(v["layout"] for v in p.get("variants", [])) or p.get("layout", "-")
-            print(f"{p.get('logged_at','')[:10]}  {layouts:<18} {p['slug']}")
+            layouts = ",".join(v["layout"] + (f"+{v['carousel']}" if v.get("carousel") else "") for v in p.get("variants", [])) or p.get("layout", "-")
+            print(f"{p.get('logged_at','')[:10]}  {layouts:<34} {p['slug']}")
         return
     if a[:1] == ["--skip"] and len(a) >= 2:
         entry = {"slug": a[1], "status": "skipped", "reason": " ".join(a[2:]), "logged_at": now}
@@ -29,7 +29,7 @@ def main(a):
             sys.exit(f"All files must be variants of one article, got {sorted(slugs)}")
         first = posts[0][1]
         entry = {"slug": first["slug"], "title": first["title"], "url": first["url"], "status": "drafted",
-                 "variants": [{"file": f"post{variant_suffix(path)}.json", "layout": p["layout"],
+                 "variants": [{"file": f"post{variant_suffix(path)}.json", "layout": p["layout"], "carousel": (p.get("carousel") or {}).get("style", ""),
                                "quote": p.get("quote", ""), "buffer": p.get("buffer", {})} for path, p in posts],
                  "logged_at": now}
     else:

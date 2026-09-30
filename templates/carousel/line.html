@@ -1,0 +1,12 @@
+<!-- CAROUSEL MIDDLE SLIDE (line): a strip of the art on top (a different crop on every slide, or one
+     painting panning across the slides), a big number, a small label, then her line in italic.
+     Without art, the number sits at the top on the plain background. bg: cream, lavender or black. -->
+<body style="background: {{bg}}; color: {{fg}}">
+  <div class="abs" style="left: 0; right: 0; top: 0; height: 47%; {{art_css}}"></div>
+  <div class="abs" style="left: calc(var(--u)*8); top: {{number_top}}; font-size: calc(var(--u)*17); line-height: 1; font-weight: 500; color: {{number_color}}; text-shadow: {{number_shadow}}">{{number}}</div>
+  <div class="abs mono" style="left: calc(var(--u)*8); top: calc({{text_top}} + var(--u)*7); font-size: calc(var(--u)*2.4); color: {{soft}}">{{label}}</div>
+  <div class="abs fitbox" style="left: calc(var(--u)*8); right: calc(var(--u)*10); top: calc({{text_top}} + var(--u)*12); bottom: calc(var(--u)*16); justify-content: flex-start">
+    <div class="fit" style="font-style: italic; font-size: calc(var(--u)*6.6); line-height: 1.22">{{text}}</div>
+  </div>
+  <div class="abs mono" style="left: calc(var(--u)*8); bottom: calc(var(--u)*8); color: {{soft}}">{{counter}}</div>
+</body>

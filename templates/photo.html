@@ -1,6 +1,6 @@
-<!-- PHOTO: the post's own header image as a bordered print, title + subtitle below.
+<!-- PHOTO: the post's own header image as a bordered print on lavender, title + subtitle below.
      Only use when the post has a header image (source.json "header_image"). -->
-<body style="background: var(--lavender); color: var(--cream)">
+<body style="background: var(--stage); color: var(--stage-fg)">
   <div class="abs" style="left: calc(var(--u)*10); right: calc(var(--u)*10); top: calc(var(--u)*9); bottom: calc(var(--u)*44);
        background: var(--cream); padding: calc(var(--u)*3); box-shadow: 0 calc(var(--u)*1.2) calc(var(--u)*3.5) rgba(40,30,20,.2)">
     <div style="width: 100%; height: 100%; background: url('{{image_src}}') center/cover no-repeat; filter: saturate(.85)"></div>
@@ -8,10 +8,10 @@
 
   <div class="abs fitbox" style="left: calc(var(--u)*10); right: calc(var(--u)*10); bottom: calc(var(--u)*14); height: calc(var(--u)*27); justify-content: flex-start">
     <div class="fit" style="font-size: calc(var(--u)*6.4); line-height: 1.08; font-weight: 500">{{title}}</div>
-    <div style="margin-top: calc(var(--u)*2); font-style: italic; font-size: calc(var(--u)*3.2); color: #ECE7F2">{{subtitle}}</div>
+    <div style="margin-top: calc(var(--u)*2); font-style: italic; font-size: calc(var(--u)*3.2); color: var(--stage-soft)">{{subtitle}}</div>
   </div>
 
-  <div class="abs mono" style="left: calc(var(--u)*10); right: calc(var(--u)*10); bottom: calc(var(--u)*7); color: #ECE7F2; display: flex; justify-content: space-between; align-items: center">
+  <div class="abs mono" style="left: calc(var(--u)*10); right: calc(var(--u)*10); bottom: calc(var(--u)*7); color: var(--stage-soft); display: flex; justify-content: space-between; align-items: center">
     <img class="logo" src="{{logo_src}}" alt="" style="width: calc(var(--u)*6); height: calc(var(--u)*6)"><span>{{site}}</span>
   </div>
 </body>

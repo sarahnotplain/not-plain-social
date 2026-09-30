@@ -10,7 +10,10 @@ SIZES = {                       # file name -> (width, height)
     "instagram": (1080, 1350),  # 4:5, also used for Facebook
     "pinterest": (1000, 1500),  # 2:3
 }
-LAYOUTS = ("quote", "title", "print", "photo", "note")   # "note" is only for Substack Notes
+LAYOUTS = ("quote", "title", "print", "photo", "artline", "manuscript", "cover", "poster", "note")   # "note" is only for Substack Notes
+QUOTE_LAYOUTS = ("quote", "print", "artline", "manuscript", "note")               # these show her exact words
+PHOTO_LAYOUTS = ("photo", "artline", "cover", "poster")                                         # these need header_image
+
 
 
 def config():
@@ -48,6 +51,12 @@ def variant_suffix(post_path):
 
 def image_name(post_path, platform):
     return f"{platform}{variant_suffix(post_path)}.png"
+
+
+def slide_names(post_path, post):
+    """Instagram carousel slides: post.json -> instagram-s1.png ...; post-2.json -> instagram-2-s1.png ..."""
+    n = len((post.get("carousel") or {}).get("slides", []))
+    return [f"instagram{variant_suffix(post_path)}-s{i}.png" for i in range(1, n + 1)]
 
 
 def log():

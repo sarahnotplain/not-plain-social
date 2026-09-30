@@ -1,8 +1,8 @@
 <!-- PHOTO PRINT: a tilted 5x7 cream print holding one line, on her Substack lavender, logo + title below.
      Best for: short lines (under ~15 words), memory/photograph/place-and-date posts.
      {{date_label}} is optional: leave it empty if the post doesn't anchor to a date or place. -->
-<body style="background: var(--lavender)">
-  <div class="abs" style="left: 50%; top: 43%; width: 72%; aspect-ratio: 5/7; transform: translate(-50%, -50%) rotate(-2.2deg);
+<body style="background: var(--stage)">
+  <div class="abs" style="left: 50%; top: 43%; width: 72%; aspect-ratio: 5/7; transform: translate(-50%, -50%) rotate(var(--tilt));
        background: var(--cream); padding: calc(var(--u)*4.5); box-shadow: 0 calc(var(--u)*1.4) calc(var(--u)*4) rgba(30,25,45,.28)">
     <div class="fitbox" style="height: 100%; border: 1px solid #D6CFC4; padding: calc(var(--u)*5)">
       <div class="mono" style="color: var(--accent); margin-bottom: calc(var(--u)*4)">{{date_label}}</div>
@@ -13,8 +13,8 @@
   <div class="abs" style="left: calc(var(--u)*8); right: calc(var(--u)*8); bottom: calc(var(--u)*6); display: flex; align-items: center; gap: calc(var(--u)*3)">
     <img class="logo" src="{{logo_src}}" alt="">
     <div>
-      <div class="brand" style="color: var(--cream)">{{title}}</div>
-      <div class="mono" style="color: #ECE7F2; margin-top: calc(var(--u)*1)">{{site}}</div>
+      <div class="brand" style="color: var(--stage-fg)">{{title}}</div>
+      <div class="mono" style="color: var(--stage-soft); margin-top: calc(var(--u)*1)">{{site}}</div>
     </div>
   </div>
 </body>

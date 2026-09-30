@@ -10,6 +10,12 @@
   --ink:      #1F1B17;   /* body text on cream */
   --muted:    #6E6A66;   /* secondary text on cream */
   --rule:     #D9D2C7;   /* hairlines on cream */
+
+  /* The lavender "stage" behind the print and photo layouts (her signature color). */
+  --stage:      var(--lavender);
+  --stage-fg:   var(--cream);   /* title text on the stage */
+  --stage-soft: #ECE7F2;        /* small labels on the stage */
+  --tilt: -2.2deg;               /* print angle; the renderer varies it per post */
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { width: var(--w); height: var(--h); overflow: hidden; }

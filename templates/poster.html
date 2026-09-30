@@ -1,0 +1,16 @@
+<!-- POSTER: the post's art full-bleed and dimmed, the title large, centered and in capitals
+     (like Substack's bold share image, in her serif). Only when the post has a header image. -->
+<body style="background: #14110E">
+  <div class="abs" style="inset: -2%; background: url('{{image_src}}') center 28%/cover no-repeat; filter: brightness(.5) saturate(.85) blur(2px)"></div>
+  <div class="abs" style="inset: 0; background: radial-gradient(ellipse at center, rgba(20,17,14,.15) 30%, rgba(20,17,14,.55) 100%)"></div>
+
+  <div class="abs fitbox" style="left: calc(var(--u)*10); right: calc(var(--u)*10); top: 22%; bottom: 26%; align-items: center; text-align: center">
+    <div class="fit" style="font-size: calc(var(--u)*11); line-height: 1.02; font-weight: 500; text-transform: uppercase; letter-spacing: .03em; color: #EADFCB">{{title}}</div>
+    <div style="margin-top: calc(var(--u)*5); width: calc(var(--u)*8); height: 2px; background: var(--kraft)"></div>
+  </div>
+
+  <div class="abs" style="left: calc(var(--u)*8); right: calc(var(--u)*8); bottom: calc(var(--u)*7); display: flex; justify-content: space-between; align-items: center">
+    <div class="mono" style="color: #C9C0B3">{{site}}</div>
+    <img class="logo" src="{{logo_src}}" alt="" style="width: calc(var(--u)*8); height: calc(var(--u)*8)">
+  </div>
+</body>

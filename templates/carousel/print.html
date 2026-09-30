@@ -1,0 +1,12 @@
+<!-- CAROUSEL MIDDLE SLIDE (print): her line on a tilted cream 5x7 print on lavender, with a small
+     label above it, like flipping through an album. Good for "album" and "details" carousels. -->
+<body style="background: var(--lavender)">
+  <div class="abs" style="left: 50%; top: 47%; width: 70%; aspect-ratio: 5/6; transform: translate(-50%, -50%) rotate({{tilt}});
+       background: var(--cream); padding: calc(var(--u)*4.5); box-shadow: 0 calc(var(--u)*1.4) calc(var(--u)*4) rgba(30,25,45,.28)">
+    <div class="fitbox" style="height: 100%; border: 1px solid #D6CFC4; padding: calc(var(--u)*5)">
+      <div class="mono" style="color: var(--accent); margin-bottom: calc(var(--u)*4)">{{number}}&nbsp;&nbsp;{{label}}</div>
+      <div class="fit" style="font-size: calc(var(--u)*6.2); line-height: 1.2; color: var(--ink)">{{text}}</div>
+    </div>
+  </div>
+  <div class="abs mono" style="left: calc(var(--u)*8); bottom: calc(var(--u)*8); color: #ECE7F2">{{counter}}</div>
+</body>

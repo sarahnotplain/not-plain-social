@@ -1,0 +1,13 @@
+<!-- CAROUSEL SLIDE 1 (hook): black, big serif hook on the left, a close crop of the art down the right,
+     an optional numbered list of what's coming, "Swipe". Without art, the text takes the full width. -->
+<body style="background: var(--black); color: var(--cream)">
+  <div class="abs" style="right: 0; top: 0; bottom: 0; width: 38%; {{art_css}}"></div>
+  <div class="abs" style="right: 0; top: 0; bottom: 0; width: 38%; background: linear-gradient(90deg, #000 0%, rgba(0,0,0,0) 45%); {{art_only}}"></div>
+  <div class="abs mono" style="left: calc(var(--u)*8); top: calc(var(--u)*8); color: var(--kraft)">{{eyebrow}}</div>
+  <div class="abs fitbox" style="left: calc(var(--u)*8); width: {{text_width}}; top: calc(var(--u)*17); bottom: calc(var(--u)*{{text_bottom}}); justify-content: flex-start">
+    <div class="fit" style="font-size: calc(var(--u)*10.5); line-height: 1.04; font-weight: 500">{{text}}</div>
+  </div>
+  <div class="abs" style="left: calc(var(--u)*8); bottom: calc(var(--u)*18); display: grid; gap: calc(var(--u)*2.2)">{{list_html}}</div>
+  <div class="abs mono" style="left: calc(var(--u)*8); bottom: calc(var(--u)*8); font-size: calc(var(--u)*2.4); color: var(--kraft); {{swipe_css}}">Swipe &rarr;</div>
+  <img class="abs logo" src="{{logo_src}}" alt="" style="right: calc(var(--u)*6); bottom: calc(var(--u)*6)">
+</body>
