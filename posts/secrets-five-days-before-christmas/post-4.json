@@ -74,5 +74,14 @@
       "id": "6abd5c01d94b607cf609ce3c",
       "status": "draft"
     }
+  },
+  "reel": {
+    "motion": "private/reels/motion/red-hair.mp4",
+    "lines": [
+      "…there were only three places she could have gone",
+      "…the kitchen was empty",
+      "…the garage door was closed like it always was",
+      "Their eyes met."
+    ]
   }
 }

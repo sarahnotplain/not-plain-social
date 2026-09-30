@@ -63,5 +63,13 @@
       "id": "6abd5c037b8871703c88e758",
       "status": "draft"
     }
+  },
+  "reel": {
+    "motion": "private/reels/motion/roses.mp4",
+    "lines": [
+      "My mother isn’t in any of them, but she occupies every single one.",
+      "A moment in time captured through the lens of my mother.",
+      "There, but not here."
+    ]
   }
 }

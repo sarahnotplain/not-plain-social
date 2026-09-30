@@ -70,5 +70,13 @@
       "id": "6abd5c05b13d27f490503cdb",
       "status": "draft"
     }
+  },
+  "reel": {
+    "motion": "private/reels/motion/forest.mp4",
+    "lines": [
+      "It’s a hot summer day. My family is living in a small Texas town, and I’m 6 years old.",
+      "Finally, she loads us into the forest green Pontiac.",
+      "We haven’t gone far when the car screeches to a halt."
+    ]
   }
 }
