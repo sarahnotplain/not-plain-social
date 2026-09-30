@@ -10,11 +10,44 @@
   "date_label": "",
   "alt_text": "Public domain artwork (an early color photograph of two pink roses) shown as a bordered print on lavender, with the title There, But Not Here and subtitle below. Not Plain.",
   "captions": {
-    "instagram": "There, But Not Here.\n\nPictures of my mother exist, but they're scattered across Houston, kept by different family members, tucked away in closets where they'll stay. Not thrown away. Just never looked at.\n\nFrom Not Plain. Read it at the link in bio.\n\n#memoir #grief #familyphotos #narrativenonfiction",
+    "instagram": "There, But Not Here.\n\nPictures of my mother exist, but they're scattered across Houston, kept by different family members, tucked away in closets where they'll stay. Not thrown away. Just never looked at.\n\nSwipe through.\n\nFrom Not Plain. Read it at the link in bio.\n\n#memoir #grief #familyphotos #narrativenonfiction",
     "facebook": "There, But Not Here.\n\nPictures of my mother exist, but they're scattered across Houston, kept by different family members, tucked away in closets where they'll stay. Not thrown away. Just never looked at.\n\nFrom Not Plain. Read it here:\nhttps://sarahnotplain.substack.com/p/there-but-not-here",
     "pinterest": {
       "title": "There, But Not Here: a memoir essay about the photos families keep",
       "description": "A memoir essay about family photographs, the ones we protect and the ones scattered and tucked away, and how grief lives inside them. Narrative nonfiction from Not Plain, a memoir newsletter by Sarah."
     }
+  },
+  "carousel": {
+    "style": "album",
+    "slides": [
+      {
+        "kind": "hook",
+        "eyebrow": "the stack of photos",
+        "text": "My mother isn’t in any of them, but she occupies every single one.",
+        "crop": "50% 40%"
+      },
+      {
+        "kind": "print",
+        "label": "a cake",
+        "text": "He’s holding a cake with the words Happy Birthday written in my mother’s cursive…"
+      },
+      {
+        "kind": "print",
+        "label": "that big grin",
+        "text": "My dad is grinning that big grin, the one that came out when he was genuinely humored and happy."
+      },
+      {
+        "kind": "line",
+        "label": "the lens",
+        "text": "A moment in time captured through the lens of my mother.",
+        "crop": "35% 45%",
+        "bg": "black"
+      },
+      {
+        "kind": "end",
+        "text": "There, but not here.",
+        "crop": "60% 40%"
+      }
+    ]
   }
 }

@@ -10,11 +10,52 @@
   "date_label": "",
   "alt_text": "Public domain artwork (a painting of a dirt path winding through a wooded park) shown as a bordered print on lavender, with the title The Gloria Tornado and subtitle below. Not Plain.",
   "captions": {
-    "instagram": "The Gloria Tornado.\n\nI'm six, sitting on a tiny raised seat in the middle of the back row, right next to my little brother's car seat. The road ahead is miles of winding dirt. We're late, of course.\n\nFrom Not Plain. Read it at the link in bio.\n\n#memoir #narrativenonfiction #childhoodmemories #truestory",
+    "instagram": "The Gloria Tornado.\n\nI'm six, sitting on a tiny raised seat in the middle of the back row, right next to my little brother's car seat. The road ahead is miles of winding dirt. We're late, of course.\n\nSwipe through.\n\nFrom Not Plain. Read it at the link in bio.\n\n#memoir #narrativenonfiction #childhoodmemories #truestory",
     "facebook": "The Gloria Tornado.\n\nI'm six, sitting on a tiny raised seat in the middle of the back row, right next to my little brother's car seat. The road ahead is miles of winding dirt. We're late, of course.\n\nFrom Not Plain. Read it here:\nhttps://sarahnotplain.substack.com/p/the-gloria-tornado",
     "pinterest": {
       "title": "The Gloria Tornado: a backseat memory from a 1990s Texas childhood",
       "description": "A six-year-old's memory from the back seat of a forest green Pontiac on a winding Texas dirt road, told as memoir. Narrative nonfiction about family and memory from Not Plain, a memoir newsletter by Sarah."
     }
+  },
+  "carousel": {
+    "style": "panorama",
+    "panorama": true,
+    "slides": [
+      {
+        "kind": "hook",
+        "eyebrow": "The Gloria Tornado",
+        "text": "It’s a hot summer day. My family is living in a small Texas town, and I’m 6 years old.",
+        "crop": "70% 50%"
+      },
+      {
+        "kind": "line",
+        "label": "the road",
+        "text": "The road is lined with blackberry bushes and overgrown trees",
+        "bg": "cream"
+      },
+      {
+        "kind": "print",
+        "number": "02",
+        "label": "the car",
+        "text": "Finally, she loads us into the forest green Pontiac."
+      },
+      {
+        "kind": "line",
+        "label": "the backseat",
+        "text": "…a tiny raised middle seat between us.",
+        "bg": "lavender"
+      },
+      {
+        "kind": "line",
+        "label": "winding dirt road",
+        "text": "We start the drive from our house down the miles-long winding dirt road",
+        "bg": "cream"
+      },
+      {
+        "kind": "end",
+        "text": "We haven’t gone far when the car screeches to a halt.",
+        "crop": "40% 60%"
+      }
+    ]
   }
 }

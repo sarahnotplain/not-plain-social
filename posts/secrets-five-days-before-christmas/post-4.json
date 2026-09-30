@@ -10,11 +10,55 @@
   "date_label": "",
   "alt_text": "Public domain artwork (a painted portrait of a woman with long red hair against a dark background) shown as a bordered print on lavender, with the title Secrets: Five Days Before Christmas, 1990 and subtitle below. Not Plain.",
   "captions": {
-    "instagram": "Secrets: Five Days Before Christmas, 1990.\n\nMy older sister, two years old, was playing with her doll under a Christmas tree sprayed with fake snow. My grandparents were half watching sports highlights. And my mother, nine months pregnant, was about to slip away.\n\nFrom Not Plain. Read it at the link in bio.\n\n#memoir #familysecrets #narrativenonfiction #truestory",
+    "instagram": "Secrets: Five Days Before Christmas, 1990.\n\nMy older sister, two years old, was playing with her doll under a Christmas tree sprayed with fake snow. My grandparents were half watching sports highlights. And my mother, nine months pregnant, was about to slip away.\n\nSwipe through.\n\nFrom Not Plain. Read it at the link in bio.\n\n#memoir #familysecrets #narrativenonfiction #truestory",
     "facebook": "Secrets: Five Days Before Christmas, 1990.\n\nMy older sister, two years old, was playing with her doll under a Christmas tree sprayed with fake snow. My grandparents were half watching sports highlights. And my mother, nine months pregnant, was about to slip away.\n\nFrom Not Plain. Read it here:\nhttps://sarahnotplain.substack.com/p/secrets-five-days-before-christmas",
     "pinterest": {
       "title": "Secrets, 1990: a memoir essay about a Christmas-season family secret",
       "description": "Five days before Christmas in 1990, a family gathers in a living room lit by a snow-sprayed tree while a pregnant woman quietly slips away. A memoir essay about the night the author was born. From Not Plain, a memoir newsletter by Sarah."
     }
+  },
+  "carousel": {
+    "style": "scene",
+    "slides": [
+      {
+        "kind": "hook",
+        "eyebrow": "Five days before Christmas",
+        "text": "…there were only three places she could have gone",
+        "list": [
+          "the kitchen",
+          "the garage",
+          "the back door"
+        ],
+        "crop": "58% 30%"
+      },
+      {
+        "kind": "line",
+        "label": "The kitchen",
+        "text": "…the kitchen was empty",
+        "crop": "30% 22%",
+        "bg": "cream"
+      },
+      {
+        "kind": "line",
+        "label": "The garage",
+        "text": "…the garage door was closed like it always was",
+        "crop": "50% 70%",
+        "zoom": 240,
+        "bg": "lavender"
+      },
+      {
+        "kind": "line",
+        "label": "The back door",
+        "text": "She followed the stone path and when she reached the wooden trellis, dripping with honeysuckle, she heard it…",
+        "crop": "70% 40%",
+        "zoom": 300,
+        "bg": "cream"
+      },
+      {
+        "kind": "end",
+        "text": "Their eyes met.",
+        "crop": "52% 32%"
+      }
+    ]
   }
 }

@@ -1,0 +1,56 @@
+{
+  "slug": "start-here",
+  "url": "https://sarahnotplain.substack.com/",
+  "title": "Not Plain",
+  "subtitle": "A memoir in progress",
+  "header_image": "https://substackcdn.com/image/fetch/$s_!SIjp!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F26307004-23b0-4f30-8b94-7b120f23ee0c_6300x5100.jpeg",
+  "layout": "title",
+  "quote": "",
+  "label": "Start here",
+  "date_label": "",
+  "alt_text": "Dark card with the Not Plain logo and the words Not Plain, A memoir in progress.",
+  "carousel": {
+    "style": "start-here",
+    "slides": [
+      {
+        "kind": "hook",
+        "eyebrow": "Not Plain",
+        "text": "I'm writing a memoir in real time about my father's murder and my mother's conviction.",
+        "crop": "50% 40%"
+      },
+      {
+        "kind": "line",
+        "label": "Memoir fragments",
+        "text": "Narrative nonfiction, memoir fragments, and the ongoing investigation into my own life.",
+        "crop": "30% 30%",
+        "bg": "cream"
+      },
+      {
+        "kind": "print",
+        "label": "Raw storytelling",
+        "text": "I’m looking for readers who will appreciate the craft of raw storytelling more than they’ll want the “true crime” details."
+      },
+      {
+        "kind": "line",
+        "label": "A memoir in progress",
+        "text": "Victims who didn’t survive deserve just as much respect as those who did.",
+        "crop": "70% 45%",
+        "bg": "black"
+      },
+      {
+        "kind": "end",
+        "text": "Subscribe to see how it unfolds.",
+        "cta": "Start reading ",
+        "crop": "60% 40%"
+      }
+    ]
+  },
+  "captions": {
+    "instagram": "Start here.\n\nI'm Sarah, and I'm writing a memoir in real time about my father's murder and my mother's conviction. Narrative nonfiction, memoir fragments, and the ongoing investigation into my own life.\n\nIt's for readers who care more about the craft of the story than the true crime details.\n\nSwipe through, then start reading at the link in bio.\n\n#memoir #narrativenonfiction #memoirwriting #writingcommunity",
+    "facebook": "Start here.\n\nI'm Sarah, and I'm writing a memoir in real time about my father's murder and my mother's conviction. Narrative nonfiction, memoir fragments, and the ongoing investigation into my own life.\n\nIt's for readers who care more about the craft of the story than the true crime details.\n\nStart reading here:\nhttps://sarahnotplain.substack.com/",
+    "pinterest": {
+      "title": "Not Plain: a memoir written in real time",
+      "description": "Not Plain is a memoir in progress by Sarah, a narrative nonfiction writer based in Seattle, written in real time about her father's murder and her mother's conviction. Memoir fragments and literary storytelling for readers who care about craft more than true crime details. From Not Plain on Substack."
+    }
+  }
+}
