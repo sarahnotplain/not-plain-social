@@ -1,204 +1,6 @@
 {
   "posts": [
     {
-      "slug": "secrets-five-days-before-christmas",
-      "title": "Secrets: Five Days Before Christmas, 1990",
-      "url": "https://sarahnotplain.substack.com/p/secrets-five-days-before-christmas",
-      "status": "drafted",
-      "variants": [
-        {
-          "file": "post.json",
-          "layout": "print",
-          "quote": "Secrets started my life and secrets ended his.",
-          "buffer": {
-            "facebook": {
-              "id": "6abbfa21a784493a8ae4b142",
-              "status": "draft"
-            },
-            "instagram": {
-              "id": "6abbfa21e644a3493f097cfa",
-              "status": "draft"
-            },
-            "pinterest": {
-              "id": "6abbfd26a784493a8ae53914",
-              "status": "draft"
-            }
-          }
-        },
-        {
-          "file": "post-2.json",
-          "layout": "quote",
-          "quote": "My story begins in 1990, five days before Christmas.",
-          "buffer": {
-            "facebook": {
-              "id": "6abbfb709340de4c73615220",
-              "status": "draft"
-            },
-            "instagram": {
-              "id": "6abbfb719340de4c7361523c",
-              "status": "draft"
-            },
-            "pinterest": {
-              "id": "6abbfd23c6624e8178516b58",
-              "status": "draft"
-            }
-          }
-        },
-        {
-          "file": "post-3.json",
-          "layout": "title",
-          "quote": "",
-          "buffer": {
-            "facebook": {
-              "id": "6abbfb72a784493a8ae4dbb1",
-              "status": "draft"
-            },
-            "instagram": {
-              "id": "6abbfb728db23fcd3a34d820",
-              "status": "draft"
-            },
-            "pinterest": {
-              "id": "6abbfd24c6624e8178516b7a",
-              "status": "draft"
-            }
-          }
-        }
-      ],
-      "logged_at": "2026-09-29T18:02:34+00:00"
-    },
-    {
-      "slug": "there-but-not-here",
-      "title": "There, But Not Here",
-      "url": "https://sarahnotplain.substack.com/p/there-but-not-here",
-      "status": "drafted",
-      "variants": [
-        {
-          "file": "post.json",
-          "layout": "quote",
-          "quote": "There, but not here. Forever held within the edges of this 5x7 photo paper.",
-          "buffer": {
-            "facebook": {
-              "id": "6abbfa2f945e596c7038b171",
-              "status": "draft"
-            },
-            "instagram": {
-              "id": "6abbfa309340de4c73611aca",
-              "status": "draft"
-            },
-            "pinterest": {
-              "id": "6abbfd308db23fcd3a352f91",
-              "status": "draft"
-            }
-          }
-        },
-        {
-          "file": "post-2.json",
-          "layout": "print",
-          "quote": "My mother isn’t in any of them, but she occupies every single one.",
-          "buffer": {
-            "facebook": {
-              "id": "6abbfb738db23fcd3a34d83c",
-              "status": "draft"
-            },
-            "instagram": {
-              "id": "6abbfb749340de4c7361529b",
-              "status": "draft"
-            },
-            "pinterest": {
-              "id": "6abbfd2d9340de4c7361abf7",
-              "status": "draft"
-            }
-          }
-        },
-        {
-          "file": "post-3.json",
-          "layout": "title",
-          "quote": "",
-          "buffer": {
-            "facebook": {
-              "id": "6abbfb759340de4c736152bd",
-              "status": "draft"
-            },
-            "instagram": {
-              "id": "6abbfb75945e596c7038db33",
-              "status": "draft"
-            },
-            "pinterest": {
-              "id": "6abbfd2fc6624e8178516d0c",
-              "status": "draft"
-            }
-          }
-        }
-      ],
-      "logged_at": "2026-09-29T18:02:34+00:00"
-    },
-    {
-      "slug": "the-gloria-tornado",
-      "title": "The Gloria Tornado",
-      "url": "https://sarahnotplain.substack.com/p/the-gloria-tornado",
-      "status": "drafted",
-      "variants": [
-        {
-          "file": "post.json",
-          "layout": "title",
-          "quote": "",
-          "buffer": {
-            "facebook": {
-              "id": "6abbfa31a784493a8ae4b2f7",
-              "status": "draft"
-            },
-            "instagram": {
-              "id": "6abbfa32a784493a8ae4b31a",
-              "status": "draft"
-            },
-            "pinterest": {
-              "id": "6abbfd2b8db23fcd3a352ec0",
-              "status": "draft"
-            }
-          }
-        },
-        {
-          "file": "post-2.json",
-          "layout": "quote",
-          "quote": "I’m dressed and watching Gloria tornado through the house — of course it’s stressful, everything always is, and of course we’re late.",
-          "buffer": {
-            "facebook": {
-              "id": "6abbfb76f9bc1204bdf0e48b",
-              "status": "draft"
-            },
-            "instagram": {
-              "id": "6abbfb77c6624e8178511f06",
-              "status": "draft"
-            },
-            "pinterest": {
-              "id": "6abbfd28c6624e8178516c21",
-              "status": "draft"
-            }
-          }
-        },
-        {
-          "file": "post-3.json",
-          "layout": "print",
-          "quote": "My family is living in a small Texas town, and I’m 6 years old.",
-          "buffer": {
-            "facebook": {
-              "id": "6abbfb78945e596c7038db73",
-              "status": "draft"
-            },
-            "instagram": {
-              "id": "6abbfb789340de4c7361533c",
-              "status": "draft"
-            },
-            "pinterest": {
-              "id": "6abbfd2a945e596c70392ed0",
-              "status": "draft"
-            }
-          }
-        }
-      ],
-      "logged_at": "2026-09-29T18:02:34+00:00"
-    },
-    {
       "slug": "note-346709476",
       "status": "skipped",
       "reason": "intro note, platform chatter",
@@ -273,6 +75,122 @@
         }
       ],
       "logged_at": "2026-09-29T18:08:45+00:00"
+    },
+    {
+      "slug": "start-here",
+      "title": "Not Plain",
+      "url": "https://sarahnotplain.substack.com/",
+      "status": "drafted",
+      "variants": [
+        {
+          "file": "post.json",
+          "layout": "title",
+          "carousel": "start-here",
+          "quote": "",
+          "buffer": {
+            "instagram": {
+              "id": "posted-manually",
+              "status": "posted by Sarah in the Instagram app, 2026-09-30"
+            },
+            "facebook": {
+              "id": "6abd5bebf03209f7ca0b7746",
+              "status": "draft"
+            },
+            "pinterest": {
+              "id": "6abd5bffd94b607cf609cdf9",
+              "status": "draft"
+            }
+          }
+        }
+      ],
+      "logged_at": "2026-09-30T18:59:11+00:00"
+    },
+    {
+      "slug": "secrets-five-days-before-christmas",
+      "title": "Secrets: Five Days Before Christmas, 1990",
+      "url": "https://sarahnotplain.substack.com/p/secrets-five-days-before-christmas",
+      "status": "drafted",
+      "variants": [
+        {
+          "file": "post-4.json",
+          "layout": "photo",
+          "carousel": "scene",
+          "quote": "",
+          "buffer": {
+            "instagram": {
+              "id": "posted-manually",
+              "status": "posted by Sarah in the Instagram app, 2026-09-30"
+            },
+            "facebook": {
+              "id": "6abd5beed94b607cf609cccb",
+              "status": "draft"
+            },
+            "pinterest": {
+              "id": "6abd5c01d94b607cf609ce3c",
+              "status": "draft"
+            }
+          }
+        }
+      ],
+      "logged_at": "2026-09-30T18:59:13+00:00"
+    },
+    {
+      "slug": "there-but-not-here",
+      "title": "There, But Not Here",
+      "url": "https://sarahnotplain.substack.com/p/there-but-not-here",
+      "status": "drafted",
+      "variants": [
+        {
+          "file": "post-4.json",
+          "layout": "photo",
+          "carousel": "album",
+          "quote": "",
+          "buffer": {
+            "instagram": {
+              "id": "posted-manually",
+              "status": "posted by Sarah in the Instagram app, 2026-09-30"
+            },
+            "facebook": {
+              "id": "6abd5bf2f03209f7ca0b77f5",
+              "status": "draft"
+            },
+            "pinterest": {
+              "id": "6abd5c037b8871703c88e758",
+              "status": "draft"
+            }
+          }
+        }
+      ],
+      "logged_at": "2026-09-30T18:59:15+00:00"
+    },
+    {
+      "slug": "the-gloria-tornado",
+      "title": "The Gloria Tornado",
+      "url": "https://sarahnotplain.substack.com/p/the-gloria-tornado",
+      "status": "drafted",
+      "variants": [
+        {
+          "file": "post-4.json",
+          "layout": "photo",
+          "carousel": "panorama",
+          "quote": "",
+          "buffer": {
+            "instagram": {
+              "id": "posted-manually",
+              "status": "posted by Sarah in the Instagram app, 2026-09-30"
+            },
+            "facebook": {
+              "id": "6abd5bf6d94b607cf609cdaf",
+              "status": "draft"
+            },
+            "pinterest": {
+              "id": "6abd5c05b13d27f490503cdb",
+              "status": "draft"
+            }
+          }
+        }
+      ],
+      "logged_at": "2026-09-30T18:59:17+00:00"
     }
   ]
 }

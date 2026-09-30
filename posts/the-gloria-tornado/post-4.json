@@ -61,6 +61,14 @@
     "instagram": {
       "id": "posted-manually",
       "status": "posted by Sarah in the Instagram app, 2026-09-30"
+    },
+    "facebook": {
+      "id": "6abd5bf6d94b607cf609cdaf",
+      "status": "draft"
+    },
+    "pinterest": {
+      "id": "6abd5c05b13d27f490503cdb",
+      "status": "draft"
     }
   }
 }
