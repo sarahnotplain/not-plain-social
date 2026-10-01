@@ -2,8 +2,11 @@
 screen, and a few of Sarah's lines fade in and out over it, then an end card.
 
     python scripts/render_motion_reel.py posts/<slug>/post-4.json
+    python scripts/render_motion_reel.py private/reels/specs/<name>.json
 
-Needs "reel" in the post file:
+Either a post file with a "reel" section, or a spec file (for extra Reels from
+the same essay) with "post" pointing at the post file plus the same fields.
+The "reel" section looks like:
 
     "reel": {"motion": "private/reels/motion/<name>.mp4",
              "lines": ["exact words", "exact words", ...]}
@@ -64,12 +67,13 @@ def check_lines(lines, source_text):
         sys.exit("These lines aren't her exact words from source.json:\n  " + "\n  ".join(bad))
 
 
-def overlays(post, lines, tmp):
+def overlays(post, lines, tmp, cta_override=None):
     """Transparent 1080x1920 PNGs: the shade, one per line, and the end card."""
     logo = data_uri(ROOT / "assets" / "logo.png")
     title = post["title"]
     cta = ("Subscribe to read it on Not Plain." if post.get("looks_paywalled")
            else "Read the rest on Not Plain.") + " Link in bio."
+    cta = cta_override or cta
     pages = [("shade", SHADE_HTML)]
     for i, line in enumerate(lines):
         size = 76 if len(line) < 70 else 66 if len(line) < 120 else 58
@@ -90,13 +94,16 @@ def overlays(post, lines, tmp):
     return paths
 
 
-def pingpong(motion, tmp, bounce=True):
+def pingpong(motion, tmp, bounce=True, trim=None):
     """Cropped to 9:16. bounce=True plays forward then backward so the loop never jumps;
     use "bounce": false for clips made with the same start and end frame (they loop already)."""
     out = tmp / "pingpong.mp4"
     tail = "split[a][b];[b]reverse[r];[a][r]concat=n=2:v=1[v]" if bounce else "null[v]"
+    # trim = fractions to cut off [left, top, right, bottom], e.g. to hide something the AI added at an edge
+    l, tp, r, b = trim or (0, 0, 0, 0)
+    pre = f"crop=iw*{1 - l - r}:ih*{1 - tp - b}:iw*{l}:ih*{tp}," if trim else ""
     subprocess.run([FFMPEG, "-y", "-loglevel", "error", "-i", str(motion), "-filter_complex",
-                    f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps={FPS},"
+                    f"[0:v]{pre}scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps={FPS},"
                     f"setsar=1,{tail}",
                     "-map", "[v]", "-an", "-c:v", "libx264", "-crf", "16", "-pix_fmt", "yuv420p", str(out)],
                    check=True)
@@ -105,8 +112,15 @@ def pingpong(motion, tmp, bounce=True):
 
 def render(path):
     path = pathlib.Path(path)
-    post = load_json(path)
-    reel = post.get("reel") or sys.exit(f"{path} has no 'reel' section")
+    spec = load_json(path)
+    if "post" in spec:                      # a spec file: one of several Reels for an essay
+        reel, name = spec, path.stem
+        path = ROOT / spec["post"]
+        post = load_json(path)
+    else:
+        post = spec
+        reel = post.get("reel") or sys.exit(f"{path} has no 'reel' section")
+        name = f"{post['slug']}-motion"
     motion = ROOT / reel["motion"]
     if not motion.exists():
         sys.exit(f"Motion clip not found: {motion}")
@@ -122,8 +136,8 @@ def render(path):
 
     with tempfile.TemporaryDirectory() as d:
         tmp = pathlib.Path(d)
-        png = overlays(post, lines, tmp)
-        bg = pingpong(motion, tmp, reel.get("bounce", True))
+        png = overlays(post, lines, tmp, reel.get("cta"))
+        bg = pingpong(motion, tmp, reel.get("bounce", True), reel.get("trim"))
         args = [FFMPEG, "-y", "-loglevel", "error", "-stream_loop", "-1", "-t", f"{total:.2f}", "-i", str(bg)]
         names = ["shade"] + [f"line{i}" for i in range(len(lines))] + ["end"]
         for n in names:
@@ -146,7 +160,7 @@ def render(path):
         f.append(f"[{last}]format=yuv420p[out]")
 
         OUT_DIR.mkdir(parents=True, exist_ok=True)
-        out = OUT_DIR / f"{post['slug']}-motion.mp4"
+        out = OUT_DIR / f"{name}.mp4"
         args += ["-filter_complex", ";".join(f), "-map", "[out]", "-map", f"{len(names) + 1}:a",
                  "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-pix_fmt", "yuv420p",
                  "-c:a", "aac", "-b:a", "128k", "-shortest", "-movflags", "+faststart", str(out)]
