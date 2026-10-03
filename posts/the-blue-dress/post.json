@@ -1,0 +1,58 @@
+{
+  "slug": "the-blue-dress",
+  "url": "https://sarahnotplain.substack.com/p/the-blue-dress",
+  "title": "The Blue Dress",
+  "subtitle": "The question I wasn't supposed to ask",
+  "header_image": "https://substackcdn.com/image/fetch/$s_!53-a!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0d64fb10-e2ae-41cd-9730-33d2f29a4623_500x674.jpeg",
+  "date_label": "",
+  "layout": "cover",
+  "quote": "",
+  "label": "New essay",
+  "alt_text": "Public domain painting The Sisters by Wilfrid de Glehn (two women in pale blue dresses) full-bleed, fading to dark, with the title The Blue Dress and subtitle The question I wasn't supposed to ask. Not Plain.",
+  "carousel": {
+    "style": "scene",
+    "slides": [
+      {
+        "kind": "hook",
+        "eyebrow": "North Carolina",
+        "text": "I always asked my mom why I wasn’t allowed to go to North Carolina with my sister every year when her summer trip was planned.",
+        "crop": "50% 30%"
+      },
+      {
+        "kind": "line",
+        "label": "Sar",
+        "text": "That’s not my name. It’s incomplete, suffocated by her breath…",
+        "crop": "50% 18%",
+        "bg": "cream",
+        "zoom": 105
+      },
+      {
+        "kind": "print",
+        "label": "a JCPenney dressing room",
+        "text": "…crowded into a JCPenney dressing room…"
+      },
+      {
+        "kind": "line",
+        "label": "11 years old",
+        "text": "But here I am, 11 years old, chubby, but not that chubby, feeling as inadequate as I always do, and suddenly a new question pops into my head.",
+        "crop": "40% 72%",
+        "bg": "lavender",
+        "zoom": 110
+      },
+      {
+        "kind": "end",
+        "text": "My ears fill with the pressure of my blood.",
+        "crop": "30% 52%",
+        "zoom": 170
+      }
+    ]
+  },
+  "captions": {
+    "instagram": "“I always asked my mom why I wasn’t allowed to go to North Carolina with my sister every year when her summer trip was planned.”\n\nOne afternoon in a JCPenney dressing room, at 11 years old, I asked a different question. Swipe through.\n\nNew essay on Not Plain. Read it at the link in bio.\n\n#memoir #narrativenonfiction #familysecrets #memoirwriting #substack",
+    "facebook": "“I always asked my mom why I wasn’t allowed to go to North Carolina with my sister every year when her summer trip was planned.”\n\nI’m 11, crowded into a JCPenney dressing room with my mom and my sister, who is trying on a pretty blue dress. I ask about the trip again. And then a new question pops into my head, one I had never thought to ask.\n\nNew essay on Not Plain. Read it here:\nhttps://sarahnotplain.substack.com/p/the-blue-dress",
+    "pinterest": {
+      "title": "The Blue Dress: a memoir essay about sisters, shame and a family secret",
+      "description": "At 11, crowded into a JCPenney dressing room with her mom and sister, the author asks again why she is never allowed to join her sister's summer trip to North Carolina, and then a new question she had never thought to ask. A true story about sisters and family, from a narrative nonfiction memoir in progress. From Not Plain, a memoir newsletter by Sarah."
+    }
+  }
+}
