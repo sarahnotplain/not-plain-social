@@ -16,5 +16,19 @@
       "title": "Why I'm writing a memoir about my dad",
       "description": "A note from Sarah, who is writing a memoir in real time about her father and her family. After her mother became eligible for parole, she ordered the case files to understand what happened, and is sharing his story to honor him. From Not Plain, a memoir newsletter by Sarah."
     }
+  },
+  "buffer": {
+    "facebook": {
+      "id": "6ac15943fec5913394847692",
+      "status": "draft"
+    },
+    "instagram": {
+      "id": "6ac15943fec59133948476ae",
+      "status": "draft"
+    },
+    "pinterest": {
+      "id": "6ac159437d53b827e0eaf413",
+      "status": "draft"
+    }
   }
 }

@@ -259,6 +259,35 @@
         }
       ],
       "logged_at": "2026-10-03T19:35:52+00:00"
+    },
+    {
+      "slug": "note-350740865",
+      "title": "Notes from Not Plain",
+      "url": "https://sarahnotplain.substack.com",
+      "status": "drafted",
+      "variants": [
+        {
+          "file": "post.json",
+          "layout": "note",
+          "carousel": "",
+          "quote": "My mom murdered my dad. She became eligible for parole last year. \n\nI couldn’t deal with the potential of her being released before I had looked into what ACTUALLY happened that night so I ordered the case files and dove into my nightmare. \n\nI’m sharing his story, my story, to honor my dad. For too long he suffered in silence. He deserved a voice. He deserved to live.",
+          "buffer": {
+            "facebook": {
+              "id": "6ac15943fec5913394847692",
+              "status": "draft"
+            },
+            "instagram": {
+              "id": "6ac15943fec59133948476ae",
+              "status": "draft"
+            },
+            "pinterest": {
+              "id": "6ac159437d53b827e0eaf413",
+              "status": "draft"
+            }
+          }
+        }
+      ],
+      "logged_at": "2026-10-03T19:36:36+00:00"
     }
   ]
 }
