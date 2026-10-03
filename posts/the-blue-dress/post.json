@@ -54,5 +54,18 @@
       "title": "The Blue Dress: a memoir essay about sisters, shame and a family secret",
       "description": "At 11, crowded into a JCPenney dressing room with her mom and sister, the author asks again why she is never allowed to join her sister's summer trip to North Carolina, and then a new question she had never thought to ask. A true story about sisters and family, from a narrative nonfiction memoir in progress. From Not Plain, a memoir newsletter by Sarah."
     }
+  },
+  "buffer": {
+    "facebook": {
+      "id": "6ac1590c814d657011d3744e",
+      "status": "draft"
+    },
+    "instagram": {
+      "error": "Invalid post: Instagram does not support the 'carousel' post type. Valid types are post, story, or reel."
+    },
+    "pinterest": {
+      "id": "6ac1590dfec59133948471cb",
+      "status": "draft"
+    }
   }
 }

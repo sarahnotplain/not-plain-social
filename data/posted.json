@@ -191,6 +191,74 @@
         }
       ],
       "logged_at": "2026-09-30T18:59:17+00:00"
+    },
+    {
+      "slug": "the-blue-dress",
+      "title": "The Blue Dress",
+      "url": "https://sarahnotplain.substack.com/p/the-blue-dress",
+      "status": "drafted",
+      "variants": [
+        {
+          "file": "post.json",
+          "layout": "cover",
+          "carousel": "scene",
+          "quote": "",
+          "buffer": {
+            "facebook": {
+              "id": "6ac1590c814d657011d3744e",
+              "status": "draft"
+            },
+            "instagram": {
+              "error": "Invalid post: Instagram does not support the 'carousel' post type. Valid types are post, story, or reel."
+            },
+            "pinterest": {
+              "id": "6ac1590dfec59133948471cb",
+              "status": "draft"
+            }
+          }
+        },
+        {
+          "file": "post-2.json",
+          "layout": "artline",
+          "carousel": "",
+          "quote": "I find a big ring of blue jeans hanging on a circular rack, and I push between them. I disappear into them and into myself.",
+          "buffer": {
+            "facebook": {
+              "id": "6ac1590f814d657011d37470",
+              "status": "draft"
+            },
+            "instagram": {
+              "id": "6ac1590f814d657011d3748c",
+              "status": "draft"
+            },
+            "pinterest": {
+              "id": "6ac15910fec59133948471e8",
+              "status": "draft"
+            }
+          }
+        },
+        {
+          "file": "post-3.json",
+          "layout": "quote",
+          "carousel": "",
+          "quote": "That’s not my name. It’s incomplete, suffocated by her breath, as if saying my full name might give me agency to be a full person and not her emotional walking stick.",
+          "buffer": {
+            "facebook": {
+              "id": "6ac159127ff895d757b8a9b0",
+              "status": "draft"
+            },
+            "instagram": {
+              "id": "6ac15913814d657011d374c2",
+              "status": "draft"
+            },
+            "pinterest": {
+              "id": "6ac15913aa79e514b9fc6e14",
+              "status": "draft"
+            }
+          }
+        }
+      ],
+      "logged_at": "2026-10-03T19:35:52+00:00"
     }
   ]
 }
