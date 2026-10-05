@@ -5,8 +5,10 @@ Usage:
     python scripts/buffer.py introspect CreatePostInput   # show a GraphQL type's fields (for fixing field names)
     python scripts/buffer.py draft posts/<slug>/post.json [--dry-run] [--only facebook,instagram]
     python scripts/buffer.py update posts/<slug>/post.json   # push edited captions to existing drafts
+    python scripts/buffer.py note notes/<file>.json [--dry-run]  # one of Sarah's own Substack Notes, as a draft
 
-`draft` creates one DRAFT per platform (Facebook, Instagram, Pinterest). Nothing is
+`draft` creates one DRAFT per platform (Facebook, Pinterest, and a Substack Note when the
+package has a "substack" caption; Instagram is paused). Nothing is
 published: Sarah approves drafts in Buffer. Images must already be pushed to GitHub
 so their raw URLs are public (Buffer has no upload endpoint).
 
@@ -142,20 +144,29 @@ def build_inputs(post, cfg, path):
         ig_assets, ig_type = img(square), "post"
         fb_assets = img(square)
     common = {"schedulingType": "automatic", "mode": "addToQueue", "saveToDraft": True, "needsApproval": False}
-    return {
+    inputs = {
         "facebook": {**common, "channelId": ch["facebook"],
                      "text": caps["facebook"].replace(post["url"], tracked(post["url"], "facebook", post, path)),
                      "assets": fb_assets,
                      "metadata": {"facebook": {"type": "post"}}},
-        "instagram": {**common, "channelId": ch["instagram"], "text": caps["instagram"],
-                      "assets": ig_assets,
-                      "metadata": {"instagram": {"type": ig_type, "shouldShareToFeed": True}}},
         "pinterest": {**common, "channelId": ch["pinterest"], "text": caps["pinterest"]["description"],
                       "assets": img(tall),
                       "metadata": {"pinterest": {"boardServiceId": cfg["buffer"]["pinterest_board_id"],
                                                  "title": caps["pinterest"]["title"],
                                                  "url": tracked(post["url"], "pinterest", post, path)}}},
     }
+    # Instagram is paused (Sarah disconnected it on 2026-10-05). It only comes back if a channel id
+    # is set in config.json again and the package has an instagram caption.
+    if ch.get("instagram") and caps.get("instagram"):
+        inputs["instagram"] = {**common, "channelId": ch["instagram"], "text": caps["instagram"],
+                               "assets": ig_assets,
+                               "metadata": {"instagram": {"type": ig_type, "shouldShareToFeed": True}}}
+    # Substack Notes: text only, with the essay attached as a link card. Only packages that have
+    # a "substack" caption get one (normally just post.json, so Notes don't repeat).
+    if ch.get("substack") and caps.get("substack"):
+        inputs["substack"] = {**common, "channelId": ch["substack"], "text": caps["substack"],
+                              "metadata": {"substack": {"linkAttachment": {"url": tracked(post["url"], "substack", post, path)}}}}
+    return inputs
 
 
 def wait_for_images(post, cfg, path):
@@ -193,6 +204,31 @@ def draft(path, dry_run=False, only=None):
         sys.exit(1)
 
 
+def note(path, dry_run=False):
+    """Send one of Sarah's own Substack Notes to Buffer as a DRAFT.
+
+    The file is JSON: {"text": "...", "link": "" (optional URL to attach)}.
+    """
+    path = pathlib.Path(path)
+    n, cfg = load_json(path), config()
+    if n.get("buffer", {}).get("id"):
+        sys.exit(f"Already in Buffer ({n['buffer']['id']}).")
+    ch = cfg["buffer"]["channels"].get("substack")
+    if not ch:
+        sys.exit("No substack channel id in config.json (buffer.channels.substack).")
+    meta = {"substack": {"linkAttachment": {"url": n["link"]}}} if n.get("link") else {"substack": {}}
+    inp = {"channelId": ch, "text": n["text"], "schedulingType": "automatic", "mode": "addToQueue",
+           "saveToDraft": True, "needsApproval": False, "metadata": meta}
+    if dry_run:
+        print(json.dumps(inp, indent=2, ensure_ascii=False)); return
+    out = gql(CREATE, {"input": inp})["createPost"]
+    if "post" not in out:
+        sys.exit(f"FAILED - {out.get('message')}")
+    n["buffer"] = {"id": out["post"]["id"], "status": "draft"}
+    save_json(path, n)
+    print(f"substack note: draft created ({out['post']['id']})")
+
+
 EDIT = """mutation($input: EditPostInput!) {
   editPost(input: $input) {
     ... on PostActionSuccess { post { id } }
@@ -209,7 +245,7 @@ def update(path):
     wait_for_images(post, cfg, path)
     failed = False
     for platform, existing in post.get("buffer", {}).items():
-        if not existing.get("id"):
+        if not existing.get("id") or platform not in inputs:
             continue
         # Only touch drafts. Editing a queued post through the API turns it back into a draft,
         # which silently un-schedules something Sarah already approved.
@@ -238,4 +274,5 @@ if __name__ == "__main__":
         only = a[a.index("--only") + 1].split(",") if "--only" in a else None
         draft(a[1], "--dry-run" in a, only)
     elif a[:1] == ["update"] and len(a) == 2: update(a[1])
+    elif a[:1] == ["note"] and len(a) >= 2: note(a[1], "--dry-run" in a)
     else: sys.exit(__doc__)

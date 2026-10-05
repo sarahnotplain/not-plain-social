@@ -33,6 +33,9 @@ Each of an article's three captions should use **different details** from the es
 
 ## Per platform
 
+**Substack Note** (post.json only; Instagram is paused): casual and personal, normal capitalization. A quoted line or one-sentence hook, then one or two sentences of context. No hashtags, no URL (Buffer adds the link card).
+
+
 **Instagram:** hook, blank line, scene, blank line, call to action ending "Read it at the link in bio.", blank line, 3 to 5 hashtags on their own line.
 
 **Facebook:** same hook and scene, then the call to action ending "Read it here:" with the full post URL on the next line (Facebook turns it into a link preview). At most 2 hashtags, or none.

@@ -9,7 +9,7 @@ platform limits or house rules, or (with --images) the images are missing.
 import pathlib, re, sys, unicodedata
 from common import LAYOUTS, PHOTO_LAYOUTS, QUOTE_LAYOUTS, image_name, load_json, slide_names
 
-LIMITS = {"instagram": 2200, "facebook": 5000, "pin_title": 100, "pin_desc": 500}
+LIMITS = {"substack": 3000, "instagram": 2200, "facebook": 5000, "pin_title": 100, "pin_desc": 500}
 MAX_HASHTAGS = 5
 
 
@@ -81,13 +81,16 @@ def main(path, check_images=False):
 
     caps = post.get("captions", {})
     ig, fb, pin = caps.get("instagram", ""), caps.get("facebook", ""), caps.get("pinterest", {})
-    if not ig or not fb or not pin.get("title") or not pin.get("description"):
-        errors.append("captions need instagram, facebook, pinterest.title and pinterest.description")
+    sub = caps.get("substack", "")
+    # Instagram is paused (2026-10-05): its caption is optional now.
+    if not fb or not pin.get("title") or not pin.get("description"):
+        errors.append("captions need facebook, pinterest.title and pinterest.description")
+    if len(sub) > LIMITS["substack"]: errors.append("substack note over 3,000 characters")
     if len(ig) > LIMITS["instagram"]: errors.append("instagram caption over 2,200 characters")
     if len(fb) > LIMITS["facebook"]: errors.append("facebook caption is too long")
     if len(pin.get("title", "")) > LIMITS["pin_title"]: errors.append("pinterest title over 100 characters")
     if len(pin.get("description", "")) > LIMITS["pin_desc"]: errors.append("pinterest description over 500 characters")
-    for name, text in (("instagram", ig), ("facebook", fb)):
+    for name, text in (("instagram", ig), ("facebook", fb), ("substack", sub)):
         if len(re.findall(r"#\w+", text)) > MAX_HASHTAGS:
             errors.append(f"{name}: more than {MAX_HASHTAGS} hashtags")
     if post.get("url") and post["url"] not in fb:
@@ -98,7 +101,7 @@ def main(path, check_images=False):
         errors.append("no emoji (house rule, see CLAUDE.md)")
 
     # House style for the caption wording itself (her quoted words are left as she wrote them).
-    for name, text in (("instagram", ig), ("facebook", fb), ("pinterest", pin.get("description", ""))):
+    for name, text in (("instagram", ig), ("facebook", fb), ("substack", sub), ("pinterest", pin.get("description", ""))):
         own = text.replace(quote, "") if quote else text
         if "—" in own:
             errors.append(f"{name}: no em dashes in caption wording (use a period or comma)")

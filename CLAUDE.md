@@ -1,6 +1,6 @@
 # Not Plain: social sharing
 
-This repo turns new posts from Sarah's Substack, **Not Plain** (sarahnotplain.substack.com), into draft social posts for Facebook, Instagram and Pinterest. Each draft includes a branded image. Sarah approves every draft in Buffer before anything goes live.
+This repo turns new posts from Sarah's Substack, **Not Plain** (sarahnotplain.substack.com), into draft social posts for Facebook, Pinterest and Substack Notes. Facebook and Pinterest drafts include a branded image. **Instagram is paused** (Sarah disconnected it from Buffer on 2026-10-05): don't make Instagram captions, carousels or Reels unless she brings it back. Sarah approves every draft in Buffer before anything goes live.
 
 **About the writing:** Not Plain is narrative nonfiction. Sarah is writing a memoir in real time about her father's murder and her mother's conviction. Everything we post about it has to read as literary memoir, never as true-crime content or clickbait.
 
@@ -8,7 +8,7 @@ This repo turns new posts from Sarah's Substack, **Not Plain** (sarahnotplain.su
 
 Run the `share-new-posts` skill (`/share-new-posts`). It walks through every step. In short:
 
-check feed → write post.json, post-2.json, post-3.json (3 packages per article: layout, quote, captions) → validate → render images → look at them → git push → Buffer drafts → log → then one Substack Note (check_notes.py, at most 1 draft a day) → report
+check feed → write post.json, post-2.json, post-3.json (3 packages per article: layout, quote, captions; post.json also gets a `substack` Note caption) → validate → render images → look at them → git push → Buffer drafts → log → then one Substack Note (check_notes.py, at most 1 draft a day) → report
 
 ## Hard rules
 
@@ -37,6 +37,7 @@ check feed → write post.json, post-2.json, post-3.json (3 packages per article
 | `data/posted.json` | Log of what's been drafted/skipped. Never re-draft a logged post unless asked. |
 | `config.json` | Substack URL, GitHub repo, Buffer channel + board IDs |
 | `.env` | `BUFFER_API_KEY` (never commit, never print) |
+| `private/notes/` | Sarah's own Substack Notes (`{"text", "link"}`), sent as Buffer drafts with `scripts/buffer.py note` |
 
 ## Design changes
 

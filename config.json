@@ -10,8 +10,9 @@
   "buffer": {
     "channels": {
       "facebook": "6abaf243ea19ca0bde1a712f",
-      "instagram": "6abaf17bea19ca0bde1a5192",
-      "pinterest": "6abaf1c6ea19ca0bde1a5f58"
+      "pinterest": "6abaf1c6ea19ca0bde1a5f58",
+      "substack": "6ac42d626a5c39ccb6274a6a",
+      "instagram": ""
     },
     "pinterest_board_id": "1150880948467442014"
   },

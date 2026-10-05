@@ -62,7 +62,11 @@ The layouts:
 
 Lavender is her signature color: `print` and `photo` always sit on lavender. The print's tilt varies automatically.
 
-**Build the Instagram carousel.** Sarah considers carousels very important: Instagram needs to stop the scroll, and a single quote or title card doesn't. Facebook and Pinterest keep the single image from `layout`; Instagram gets the carousel instead.
+**Instagram is paused (2026-10-05).** Skip the Instagram caption, carousel and Reel unless Sarah brings Instagram back. A carousel is still optional for Facebook, which posts its slides as a multi-photo post.
+
+**Write the Substack Note (post.json only).** Add `captions.substack`: a short Note in her voice (casual, normal capitalization, no emoji, no em dashes): one line from the essay in quotation marks or a one-sentence hook, one or two sentences of context from the post, and nothing that gives away the ending. Buffer attaches the essay as a link card, so don't paste the URL. Packages 2 and 3 get no Substack caption, so Notes don't repeat.
+
+**(Paused) Build the Instagram carousel.** Sarah considers carousels very important: Instagram needs to stop the scroll, and a single quote or title card doesn't. Facebook and Pinterest keep the single image from `layout`; Instagram gets the carousel instead.
 
 - `post.json` always gets a carousel if the post has enough suitable lines (4 or more). `post-2.json` may get one too, in a different style. `post-3.json` stays a single image.
 - Rotate the style so carousels don't feel templated. Check `log_post.py --recent` (it shows `layout+style`) and don't repeat the last style used:
