@@ -1,0 +1,99 @@
+{
+  "note": "Standalone Pinterest pins (not tied to an essay). Render with scripts/render_pins.py. Boards are set per pin once they exist on Pinterest.",
+  "pins": [
+    {
+      "file": "guide-steps.png",
+      "label": "Free guide",
+      "title_image": "How to Request Your Family's Case File",
+      "sub": "A free guide from a daughter who requested her dad's.",
+      "items": [
+        "Find the agency that investigated",
+        "Call first and ask where to send it",
+        "Put your request in writing",
+        "Say which photos you don't want",
+        "Follow up on what's missing"
+      ],
+      "footer": "Free guide · link in profile",
+      "board": "How to Request Public Records",
+      "link": "https://linktr.ee/sarahnotplain",
+      "pin_title": "How to request your family's police case file: a free step-by-step guide",
+      "description": "A free guide to requesting police records and case files for an old family case, from a daughter who requested her dad's. Find the right agency, what to say when you call, how to write the request, how to ask them to leave out photos, and what to do when something is missing. Includes a copy-and-paste request template.",
+      "alt": "Cream pin titled How to Request Your Family's Case File, with five numbered steps. Not Plain."
+    },
+    {
+      "file": "guide-call-first.png",
+      "label": "Public records",
+      "title_image": "Requesting Police Records for an Old Case: Start Here",
+      "quote": "Call the department's non-emergency number and ask: \"How do I submit a public records request for an old case?\"",
+      "footer": "Free guide · link in profile",
+      "board": "How to Request Public Records",
+      "link": "https://linktr.ee/sarahnotplain",
+      "pin_title": "How to request police records for an old case: where to start",
+      "description": "The first step in requesting old police records or a family member's case file: call the department's non-emergency number and ask how to submit a public records request. From a free guide by a daughter who requested her dad's case file, with tips on cost, timing, photos and follow-up requests.",
+      "alt": "Cream pin titled Requesting Police Records for an Old Case: Start Here, with a tip to call the non-emergency number first. Not Plain."
+    },
+    {
+      "file": "guide-template.png",
+      "label": "Copy and paste template",
+      "title_image": "Free Public Records Request Template",
+      "quote": "Dear Custodian of Records, Under [your state's public records law], I am requesting copies of all public records related to [agency] Case #[number, if known]...",
+      "footer": "Free guide · link in profile",
+      "board": "How to Request Public Records",
+      "link": "https://linktr.ee/sarahnotplain",
+      "pin_title": "Free public records request template for police case files",
+      "description": "A free, copy-and-paste public records request template for requesting a police case file: incident reports, statements, recordings and other agency records, plus a line asking them to leave out photos you don't want to see. Part of a free guide to requesting your family's case files.",
+      "alt": "Cream pin titled Free Public Records Request Template, showing the first lines of a records request letter. Not Plain."
+    },
+    {
+      "file": "books-thrillers.png",
+      "label": "Book list",
+      "title_image": "Thriller Book Recommendations",
+      "items": [
+        "Local Woman Missing",
+        "None of This Is True",
+        "Behind Closed Doors",
+        "The Only One Left"
+      ],
+      "footer": "Shop the list · bookshop.org",
+      "board": "Thriller Book Recommendations",
+      "link": "https://bookshop.org/lists/thrillers-sarah-not-plain",
+      "pin_title": "Thriller book recommendations: twisty reads to pick up next",
+      "description": "Thriller books worth reading next, including Local Woman Missing, None of This Is True, Behind Closed Doors and The Only One Left. A book list from Sarah, a memoir writer, on Bookshop.org, which supports independent bookstores. Affiliate link.",
+      "alt": "Cream pin titled Thriller Book Recommendations listing four thriller titles. Not Plain."
+    },
+    {
+      "file": "books-dystopian.png",
+      "label": "Book list",
+      "title_image": "Dystopian, Strange & Dark Books",
+      "items": [
+        "Tender Is the Flesh",
+        "I Who Have Never Known Men",
+        "Motherthing",
+        "Strange Sally Diamond",
+        "Dark Matter"
+      ],
+      "footer": "Shop the list · bookshop.org",
+      "board": "Dystopian & Dark Books",
+      "link": "https://bookshop.org/lists/dystopian-strange-dark",
+      "pin_title": "Dystopian, strange and dark book recommendations",
+      "description": "Dark and strange books to read next, including Tender Is the Flesh, I Who Have Never Known Men, Motherthing, Strange Sally Diamond and Dark Matter. A book list from Sarah, a memoir writer, on Bookshop.org, which supports independent bookstores. Affiliate link.",
+      "alt": "Cream pin titled Dystopian, Strange and Dark Books listing five titles. Not Plain."
+    },
+    {
+      "file": "books-gothic.png",
+      "label": "Book list",
+      "title_image": "Gothic, Witchy & Fantasy Books",
+      "items": [
+        "A Dowry of Blood",
+        "The Very Secret Society of Irregular Witches",
+        "The Sacred Vine"
+      ],
+      "footer": "Shop the list · bookshop.org",
+      "board": "Gothic & Witchy Books",
+      "link": "https://bookshop.org/lists/gothic-witchy-fantasy",
+      "pin_title": "Gothic, witchy and fantasy book recommendations",
+      "description": "Gothic, witchy and fantasy books to read next, including A Dowry of Blood, The Very Secret Society of Irregular Witches and The Sacred Vine. A book list from Sarah, a memoir writer, on Bookshop.org, which supports independent bookstores. Affiliate link.",
+      "alt": "Cream pin titled Gothic, Witchy and Fantasy Books listing three titles. Not Plain."
+    }
+  ]
+}
