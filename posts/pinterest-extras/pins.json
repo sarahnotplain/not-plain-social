@@ -18,7 +18,11 @@
       "link": "https://linktr.ee/sarahnotplain",
       "pin_title": "How to request your family's police case file: a free step-by-step guide",
       "description": "A free guide to requesting police records and case files for an old family case, from a daughter who requested her dad's. Find the right agency, what to say when you call, how to write the request, how to ask them to leave out photos, and what to do when something is missing. Includes a copy-and-paste request template.",
-      "alt": "Cream pin titled How to Request Your Family's Case File, with five numbered steps. Not Plain."
+      "alt": "Cream pin titled How to Request Your Family's Case File, with five numbered steps. Not Plain.",
+      "buffer": {
+        "id": "6ac51b2e7422476c11201d5d",
+        "status": "draft"
+      }
     },
     {
       "file": "guide-call-first.png",
@@ -30,7 +34,11 @@
       "link": "https://linktr.ee/sarahnotplain",
       "pin_title": "How to request police records for an old case: where to start",
       "description": "The first step in requesting old police records or a family member's case file: call the department's non-emergency number and ask how to submit a public records request. From a free guide by a daughter who requested her dad's case file, with tips on cost, timing, photos and follow-up requests.",
-      "alt": "Cream pin titled Requesting Police Records for an Old Case: Start Here, with a tip to call the non-emergency number first. Not Plain."
+      "alt": "Cream pin titled Requesting Police Records for an Old Case: Start Here, with a tip to call the non-emergency number first. Not Plain.",
+      "buffer": {
+        "id": "6ac51b339d95cd8534293787",
+        "status": "draft"
+      }
     },
     {
       "file": "guide-template.png",
@@ -42,7 +50,11 @@
       "link": "https://linktr.ee/sarahnotplain",
       "pin_title": "Free public records request template for police case files",
       "description": "A free, copy-and-paste public records request template for requesting a police case file: incident reports, statements, recordings and other agency records, plus a line asking them to leave out photos you don't want to see. Part of a free guide to requesting your family's case files.",
-      "alt": "Cream pin titled Free Public Records Request Template, showing the first lines of a records request letter. Not Plain."
+      "alt": "Cream pin titled Free Public Records Request Template, showing the first lines of a records request letter. Not Plain.",
+      "buffer": {
+        "id": "6ac51b36f2aae537b247c288",
+        "status": "draft"
+      }
     },
     {
       "file": "books-thrillers.png",
@@ -59,7 +71,11 @@
       "link": "https://bookshop.org/lists/thrillers-sarah-not-plain",
       "pin_title": "Thriller book recommendations: twisty reads to pick up next",
       "description": "Thriller books worth reading next, including Local Woman Missing, None of This Is True, Behind Closed Doors and The Only One Left. A book list from Sarah, a memoir writer, on Bookshop.org, which supports independent bookstores. Affiliate link.",
-      "alt": "Cream pin titled Thriller Book Recommendations listing four thriller titles. Not Plain."
+      "alt": "Cream pin titled Thriller Book Recommendations listing four thriller titles. Not Plain.",
+      "buffer": {
+        "id": "6ac51b3c9d95cd8534293bc3",
+        "status": "draft"
+      }
     },
     {
       "file": "books-dystopian.png",
@@ -77,7 +93,11 @@
       "link": "https://bookshop.org/lists/dystopian-strange-dark",
       "pin_title": "Dystopian, strange and dark book recommendations",
       "description": "Dark and strange books to read next, including Tender Is the Flesh, I Who Have Never Known Men, Motherthing, Strange Sally Diamond and Dark Matter. A book list from Sarah, a memoir writer, on Bookshop.org, which supports independent bookstores. Affiliate link.",
-      "alt": "Cream pin titled Dystopian, Strange and Dark Books listing five titles. Not Plain."
+      "alt": "Cream pin titled Dystopian, Strange and Dark Books listing five titles. Not Plain.",
+      "buffer": {
+        "id": "6ac51b3ff2caeb037caa8e61",
+        "status": "draft"
+      }
     },
     {
       "file": "books-gothic.png",
@@ -93,7 +113,11 @@
       "link": "https://bookshop.org/lists/gothic-witchy-fantasy",
       "pin_title": "Gothic, witchy and fantasy book recommendations",
       "description": "Gothic, witchy and fantasy books to read next, including A Dowry of Blood, The Very Secret Society of Irregular Witches and The Sacred Vine. A book list from Sarah, a memoir writer, on Bookshop.org, which supports independent bookstores. Affiliate link.",
-      "alt": "Cream pin titled Gothic, Witchy and Fantasy Books listing three titles. Not Plain."
+      "alt": "Cream pin titled Gothic, Witchy and Fantasy Books listing three titles. Not Plain.",
+      "buffer": {
+        "id": "6ac51b479d95cd8534294008",
+        "status": "draft"
+      }
     }
   ]
 }

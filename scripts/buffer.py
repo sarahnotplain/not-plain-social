@@ -6,6 +6,7 @@ Usage:
     python scripts/buffer.py draft posts/<slug>/post.json [--dry-run] [--only facebook,instagram]
     python scripts/buffer.py update posts/<slug>/post.json   # push edited captions to existing drafts
     python scripts/buffer.py note notes/<file>.json [--dry-run]  # one of Sarah's own Substack Notes, as a draft
+    python scripts/buffer.py pins posts/pinterest-extras/pins.json [--dry-run]  # standalone pins (guide, book lists), as drafts
 
 `draft` creates one DRAFT per platform (Facebook, Pinterest, and a Substack Note when the
 package has a "substack" caption; Instagram is paused). Nothing is
@@ -229,6 +230,41 @@ def note(path, dry_run=False):
     print(f"substack note: draft created ({out['post']['id']})")
 
 
+def pins(path, dry_run=False):
+    """Send standalone Pinterest pins (posts/pinterest-extras/pins.json) to Buffer as DRAFTS.
+
+    Each pin names its board; config.json -> buffer.pinterest_boards maps board names to
+    Pinterest board ids (run `setup` after creating boards on Pinterest).
+    """
+    path = pathlib.Path(path)
+    spec, cfg = load_json(path), config()
+    ch = cfg["buffer"]["channels"].get("pinterest")
+    boards = cfg["buffer"].get("pinterest_boards", {})
+    slug = path.parent.name
+    for pin in spec["pins"]:
+        if pin.get("buffer", {}).get("id"):
+            print(f"{pin['file']}: draft already exists ({pin['buffer']['id']}), skipping"); continue
+        board = boards.get(pin["board"])
+        if not board:
+            sys.exit(f"No board id for {pin['board']!r} in config.json -> buffer.pinterest_boards.")
+        url = raw_url(cfg, slug, pin["file"])
+        inp = {"channelId": ch, "text": pin["description"], "schedulingType": "automatic",
+               "mode": "addToQueue", "saveToDraft": True, "needsApproval": False,
+               "assets": [{"image": {"url": url, "metadata": {"altText": pin["alt"]}}}],
+               "metadata": {"pinterest": {"boardServiceId": board, "title": pin["pin_title"], "url": pin["link"]}}}
+        if dry_run:
+            print(json.dumps(inp, indent=2, ensure_ascii=False)); continue
+        wait_until_public(url, path.parent / pin["file"])
+        out = gql(CREATE, {"input": inp})["createPost"]
+        if "post" not in out:
+            save_json(path, spec)
+            sys.exit(f"{pin['file']}: FAILED - {out.get('message')}")
+        pin["buffer"] = {"id": out["post"]["id"], "status": "draft"}
+        print(f"{pin['file']}: draft created on {pin['board']} ({out['post']['id']})")
+    if not dry_run:
+        save_json(path, spec)
+
+
 EDIT = """mutation($input: EditPostInput!) {
   editPost(input: $input) {
     ... on PostActionSuccess { post { id } }
@@ -275,4 +311,5 @@ if __name__ == "__main__":
         draft(a[1], "--dry-run" in a, only)
     elif a[:1] == ["update"] and len(a) == 2: update(a[1])
     elif a[:1] == ["note"] and len(a) >= 2: note(a[1], "--dry-run" in a)
+    elif a[:1] == ["pins"] and len(a) >= 2: pins(a[1], "--dry-run" in a)
     else: sys.exit(__doc__)
