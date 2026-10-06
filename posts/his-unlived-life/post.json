@@ -16,5 +16,19 @@
       "description": "A short memoir essay on why she is sharing her story: to let others know they are not alone, and to honor her dad, his life and his unlived life. On grief, trauma, survival and the belief that with death comes life. From Not Plain, a memoir newsletter by Sarah."
     },
     "substack": "I wrote a short one about why I’m sharing my story at all. To let others know they’re not alone, and to honor my dad, his life, and his unlived life."
+  },
+  "buffer": {
+    "facebook": {
+      "id": "6ac442fd98d02b181e1951f5",
+      "status": "draft"
+    },
+    "pinterest": {
+      "id": "6ac442feae999c0b7ff61ce3",
+      "status": "draft"
+    },
+    "substack": {
+      "id": "6ac442ff59057dd2e0cbefc0",
+      "status": "draft"
+    }
   }
 }
