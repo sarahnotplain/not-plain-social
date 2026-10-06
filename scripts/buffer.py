@@ -6,7 +6,7 @@ Usage:
     python scripts/buffer.py draft posts/<slug>/post.json [--dry-run] [--only facebook,instagram]
     python scripts/buffer.py update posts/<slug>/post.json   # push edited captions to existing drafts
     python scripts/buffer.py note notes/<file>.json [--dry-run]  # one of Sarah's own Substack Notes, as a draft
-    python scripts/buffer.py pins posts/pinterest-extras/pins.json [--dry-run]  # standalone pins (guide, book lists), as drafts
+    python scripts/buffer.py pins posts/pinterest-extras/pins.json [--dry-run]  # standalone pins (guide, book lists), straight to the queue
 
 `draft` creates one DRAFT per platform (Facebook, Pinterest, and a Substack Note when the
 package has a "substack" caption; Instagram is paused). Nothing is
@@ -156,6 +156,9 @@ def build_inputs(post, cfg, path):
                                                  "title": caps["pinterest"]["title"],
                                                  "url": tracked(post["url"], "pinterest", post, path)}}},
     }
+    # Pinterest skips approval: Sarah asked on 2026-10-06 for pins to go straight into the
+    # Buffer queue. Every other platform stays a draft she approves.
+    inputs["pinterest"]["saveToDraft"] = False
     # Instagram is paused (Sarah disconnected it on 2026-10-05). It only comes back if a channel id
     # is set in config.json again and the package has an instagram caption.
     if ch.get("instagram") and caps.get("instagram"):
@@ -194,8 +197,9 @@ def draft(path, dry_run=False, only=None):
             print(f"{platform}: no channel id in config.json, skipping"); continue
         out = gql(CREATE, {"input": inp})["createPost"]
         if "post" in out:
-            results[platform] = {"id": out["post"]["id"], "status": "draft"}
-            print(f"{platform}: draft created ({out['post']['id']})")
+            status = "draft" if inp["saveToDraft"] else "queued"
+            results[platform] = {"id": out["post"]["id"], "status": status}
+            print(f"{platform}: {'draft created' if status == 'draft' else 'added to queue'} ({out['post']['id']})")
         else:
             results[platform] = {"error": out.get("message")}
             print(f"{platform}: FAILED - {out.get('message')}")
@@ -231,7 +235,8 @@ def note(path, dry_run=False):
 
 
 def pins(path, dry_run=False):
-    """Send standalone Pinterest pins (posts/pinterest-extras/pins.json) to Buffer as DRAFTS.
+    """Send standalone Pinterest pins (posts/pinterest-extras/pins.json) straight to the Buffer queue
+    (Pinterest skips approval, per Sarah on 2026-10-06).
 
     Each pin names its board; config.json -> buffer.pinterest_boards maps board names to
     Pinterest board ids (run `setup` after creating boards on Pinterest).
@@ -249,7 +254,7 @@ def pins(path, dry_run=False):
             sys.exit(f"No board id for {pin['board']!r} in config.json -> buffer.pinterest_boards.")
         url = raw_url(cfg, slug, pin["file"])
         inp = {"channelId": ch, "text": pin["description"], "schedulingType": "automatic",
-               "mode": "addToQueue", "saveToDraft": True, "needsApproval": False,
+               "mode": "addToQueue", "saveToDraft": False, "needsApproval": False,
                "assets": [{"image": {"url": url, "metadata": {"altText": pin["alt"]}}}],
                "metadata": {"pinterest": {"boardServiceId": board, "title": pin["pin_title"], "url": pin["link"]}}}
         if dry_run:
@@ -259,8 +264,8 @@ def pins(path, dry_run=False):
         if "post" not in out:
             save_json(path, spec)
             sys.exit(f"{pin['file']}: FAILED - {out.get('message')}")
-        pin["buffer"] = {"id": out["post"]["id"], "status": "draft"}
-        print(f"{pin['file']}: draft created on {pin['board']} ({out['post']['id']})")
+        pin["buffer"] = {"id": out["post"]["id"], "status": "queued"}
+        print(f"{pin['file']}: added to the queue on {pin['board']} ({out['post']['id']})")
     if not dry_run:
         save_json(path, spec)
 

@@ -179,7 +179,7 @@ For each package:
 .venv/bin/python scripts/buffer.py draft posts/<slug>/post.json
 ```
 
-It waits for the images to go live, then makes one draft per platform. If a platform fails, see "If the Buffer API rejects a field" in CLAUDE.md. Don't retry more than twice. Report the failure instead.
+It waits for the images to go live, then makes one draft per platform. Pinterest is the exception: pins go straight into the Buffer queue without approval (Sarah's call, 2026-10-06). If a platform fails, see "If the Buffer API rejects a field" in CLAUDE.md. Don't retry more than twice. Report the failure instead.
 
 ## 7. Log it
 

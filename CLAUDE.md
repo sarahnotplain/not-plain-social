@@ -1,6 +1,6 @@
 # Not Plain: social sharing
 
-This repo turns new posts from Sarah's Substack, **Not Plain** (sarahnotplain.substack.com), into draft social posts for Facebook, Pinterest and Substack Notes. Facebook and Pinterest drafts include a branded image. **Instagram is paused** (Sarah disconnected it from Buffer on 2026-10-05): don't make Instagram captions, carousels or Reels unless she brings it back. Sarah approves every draft in Buffer before anything goes live.
+This repo turns new posts from Sarah's Substack, **Not Plain** (sarahnotplain.substack.com), into draft social posts for Facebook, Pinterest and Substack Notes. Facebook and Pinterest drafts include a branded image. **Instagram is paused** (Sarah disconnected it from Buffer on 2026-10-05): don't make Instagram captions, carousels or Reels unless she brings it back. Sarah approves every draft in Buffer before anything goes live, except Pinterest pins, which go straight into the Buffer queue (her call, 2026-10-06).
 
 **About the writing:** Not Plain is narrative nonfiction. Sarah is writing a memoir in real time about her father's murder and her mother's conviction. Everything we post about it has to read as literary memoir, never as true-crime content or clickbait.
 
@@ -12,7 +12,7 @@ check feed → write post.json, post-2.json, post-3.json (3 packages per article
 
 ## Hard rules
 
-1. **Drafts only.** Never publish, schedule for a time, or use `shareNow`. `scripts/buffer.py` always uses `saveToDraft: true`, so don't bypass it.
+1. **Drafts only, except Pinterest.** Never publish, schedule for a time, or use `shareNow`. `scripts/buffer.py` saves Facebook, Instagram and Substack Notes as drafts (`saveToDraft: true`), so don't bypass it. **Pinterest skips approval:** Sarah asked on 2026-10-06 for pins to go straight into the Buffer queue, so `buffer.py` adds them with `saveToDraft: false`. Don't extend that to any other platform without her say-so.
 2. **Quotes are her exact words.** Copy them character for character from `source.json`. Never paraphrase, trim the middle out of a sentence, or "tidy up" a quote. `validate_post.py` enforces this.
 3. **Only say what the post says.** Captions summarize and point to the post. Don't add facts, names, dates, feelings or details that aren't in the text.
 4. **Handle the subject with care:**
