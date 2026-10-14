@@ -58,8 +58,8 @@ def from_rss(base):
     for it in root.iter("item"):
         enc = it.find("enclosure")
         yield {
-            "title": (it.findtext("title") or "").strip(),
-            "subtitle": (it.findtext("description") or "").strip(),
+            "title": html.unescape((it.findtext("title") or "").strip()),
+            "subtitle": html.unescape((it.findtext("description") or "").strip()),
             "url": (it.findtext("link") or "").strip(),
             "published": email.utils.parsedate_to_datetime(it.findtext("pubDate")).astimezone(timezone.utc).isoformat(),
             "header_image": enc.get("url") if enc is not None and (enc.get("type") or "").startswith("image") else None,
@@ -71,7 +71,7 @@ def from_api(base, slug):
     """Fallback for one post via Substack's (unofficial) public JSON endpoint."""
     d = json.loads(get(f"{base}/api/v1/posts/{slug}"))
     return {
-        "title": d.get("title", ""), "subtitle": d.get("subtitle", "") or "",
+        "title": html.unescape(d.get("title", "")), "subtitle": html.unescape(d.get("subtitle", "") or ""),
         "url": d.get("canonical_url") or f"{base}/p/{slug}",
         "published": d.get("post_date"), "header_image": d.get("cover_image"),
         "text": to_text(d.get("body_html")),
