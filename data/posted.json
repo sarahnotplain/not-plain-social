@@ -351,6 +351,36 @@
         }
       ],
       "logged_at": "2026-10-09T20:52:49+00:00"
+    },
+    {
+      "slug": "the-rubber-band-ball",
+      "title": "The Rubber Band Ball",
+      "url": "https://sarahnotplain.substack.com/p/the-rubber-band-ball",
+      "status": "drafted",
+      "variants": [
+        {
+          "file": "post.json",
+          "layout": "photo",
+          "carousel": "",
+          "quote": "",
+          "buffer": {
+            "facebook": {
+              "id": "6acfcd91cbf423b958f602e2",
+              "status": "draft"
+            },
+            "pinterest": {
+              "id": "6acfcd91535e6a77d513c082",
+              "status": "queued"
+            },
+            "threads": {
+              "id": "6acfcd97535e6a77d513c487",
+              "status": "draft",
+              "text": "I've always been afraid to write about my dad being murdered by my mom, and what might happen if I do.\n\nI finally did. It's on my Substack, link in my bio."
+            }
+          }
+        }
+      ],
+      "logged_at": "2026-10-14T18:44:39+00:00"
     }
   ]
 }
